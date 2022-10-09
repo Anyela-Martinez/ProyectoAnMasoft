@@ -39,6 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    'usuarios',
+    'docentes',
+    'estudiantes',
+    'eventos',
+    'publicaciones',
+    'preregistro',
+    'curso',
+    'grado',
+    'asignatura',
 ]
 
 MIDDLEWARE = [
