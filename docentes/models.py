@@ -1,9 +1,10 @@
 from tabnanny import verbose
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from usuarios.models import Usuario
 
 # Create your models here.
+
 class Docente(models.Model):
     class TipoDoc(models.Model):
         CC='CC', _('Cédula de Ciudadanía')

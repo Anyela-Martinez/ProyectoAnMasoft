@@ -1,8 +1,6 @@
-from email.policy import default
-from random import choices
-from re import VERBOSE
-from tabnanny import verbose
+
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
