@@ -1,6 +1,7 @@
 from socket import TIPC_NODE_SCOPE
 from statistics import correlation
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class Preregistro(models.Model):
@@ -26,10 +27,10 @@ class Preregistro(models.Model):
 
     class GradoInt(models.Model):
         SEX='6', _('Grado Sexto')
-        SEP='7', _('Grado Septimo')
+        SEP='7', _('Grado Séptimo')
         OCT='8', _('Grado Octavo')
         NOV='9', _('Grado Noveno')
-        DEC='10', _('Grado Decimo')
+        DEC='10', _('Grado Décimo')
     GradoInt=models.CharField(max_length=5,choices=GradoInt.choices, default=GradoInt.JM, verbose_name="Grado que le interesa")
 
     direccion=models.CharField(max_length=40, verbose_name="Dirección") 
