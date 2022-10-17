@@ -16,8 +16,18 @@
     <div class="wrapper">
         {% include 'partials/header.html' %}
         {% include 'partials/sidebar.html' %}
-        {% include 'partials/main.html' %}
+
+        <div class="content-wrapper">
+            {% block contenido %}
+
+            {% endblock contenido %}
+        </div>
+    
         {% include 'partials/footer.html' %}
     </div>
+    {% block javascript %}
+        {% include 'partials/js.html' %}
+    {% endblock javascript %}
+    
 </body>
 </html>

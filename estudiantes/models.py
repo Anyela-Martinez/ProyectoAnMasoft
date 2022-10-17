@@ -3,12 +3,13 @@ from socket import TIPC_NODE_SCOPE
 from statistics import correlation
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from curso.models import Curso
 
 from usuarios.models import Usuario
 
 # Create your models here.
 class Estudiante(models.Model):
-    class TipoDoc(models.Model):
+    class TipoDoc(models.TextChoices):
         RC='RC', _('Registro Civil')
         TI='TI', _('Tarjeta de Identidad')
         CC='CC', _('Cédula de Ciudadanía')
@@ -23,7 +24,7 @@ class Estudiante(models.Model):
 
     apellidos=models.CharField(max_length=60, verbose_name="Apellidos")
 
-    class Jornada(models.Model):
+    class Jornada(models.TextChoices):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
     Jornada=models.CharField(max_length=2,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
@@ -34,18 +35,18 @@ class Estudiante(models.Model):
 
     correo=models.CharField(max_length=40, verbose_name="Correo Electrónico")
      
-    class Genero(models.Model):
+    class Genero(models.TextChoices):
         M='M', _('Masculino')
         F='F', _('Femenino')
         I='I', _('Indefinido')
     Genero=models.CharField(max_length=3,choices=Genero.choices, default=Genero.M, verbose_name="Género")
     
-    class Estado(models.Model):
+    class Estado(models.TextChoices):
         ACTIVO='1', _('Activo')
         INACTIVO='0', _('Inactivo')
     Estado=models.CharField(max_length=3,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     
-    class TipoDocAcu(models.Model):
+    class TipoDocAcu(models.TextChoices):
             CC='CC', _('Cédula de Ciudadanía')
             CE='CE', _('Cédula de Extranjería')
             PP='PP', _('Pasaporte')
