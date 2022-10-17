@@ -1,11 +1,17 @@
 from dataclasses import FrozenInstanceError
 from tkinter import image_names
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 from usuarios.models import Usuario
 
 # Create your models here.
+class TipoEvento(models.Model):
+    nombre=models.CharField(max_length=60, verbose_name="Nombre del Tipo de Evento")
+    
+    descripcion=models.CharField(max_length=100, verbose_name="Descripción del Evento")
+
 class Evento(models.Model):
     nombreEve=models.CharField(max_length=60, verbose_name="Nombre del Evento")
 

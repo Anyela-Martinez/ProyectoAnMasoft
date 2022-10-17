@@ -1,9 +1,16 @@
 from dataclasses import FrozenInstanceError
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+from docentes.models import Docente
 
 from usuarios.models import Usuario
 
 # Create your models here.
+class TipoPublicacion(models.Model):
+    nombre=models.CharField(max_length=60, verbose_name="Nombre del Tipo de Publicación")
+    
+    descripcion=models.CharField(max_length=100, verbose_name="Descripción de la publicación")
+
 class Publicacion(models.Model):
     nombrePubli=models.CharField(max_length=60, verbose_name="Nombre de la Publicación")
 
