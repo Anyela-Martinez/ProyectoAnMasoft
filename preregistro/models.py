@@ -1,7 +1,7 @@
 from socket import TIPC_NODE_SCOPE
 from statistics import correlation
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
 class Preregistro(models.Model):
     class TipoDoc(models.Model):

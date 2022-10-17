@@ -2,6 +2,7 @@ from dataclasses import FrozenInstanceError
 from tkinter import image_names
 from django.db import models
 
+
 from usuarios.models import Usuario
 
 # Create your models here.
