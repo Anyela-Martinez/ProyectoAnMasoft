@@ -10,7 +10,7 @@ class Usuario(models.Model):
         CC='CC', _('Cédula de Ciudadanía')
         CE='CE', _('Cédula de Extranjería')
         PP='PP', _('Pasaporte')
-    TipoDoc=models.CharField(max_length=3,choices=TipoDoc.choices, default=TipoDoc.CC, verbose_name="Tipo de Documento") 
+    TipoDoc=models.CharField(max_length=3, choices=TipoDoc.choices , default=TipoDoc.CC, verbose_name="Tipo de Documento") 
 
     numDoc=models.CharField(max_length=60, verbose_name="Número de Documento")
 
@@ -21,7 +21,7 @@ class Usuario(models.Model):
     class Jornada(models.Model):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
-    Jornada=models.CharField(max_length=2,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
+    Jornada=models.CharField(max_length=2,choices=Jornada.choices , default=Jornada.JM, verbose_name="Jornada")
 
     telefono=models.CharField(max_length=20, verbose_name="Teléfono") 
 
