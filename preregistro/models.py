@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class Preregistro(models.Model):
-    class TipoDoc(models.Model):
+    class TipoDoc(models.TextChoices):
         RC='RC', _('Registro Civil')
         TI='TI', _('Tarjeta de Identidad')
         CC='CC', _('Cédula de Ciudadanía')
@@ -20,12 +20,12 @@ class Preregistro(models.Model):
 
     apellidos=models.CharField(max_length=60, verbose_name="Apellidos")
 
-    class JornadaInt(models.Model):
+    class JornadaInt(models.TextChoices):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
     JornadaInt=models.CharField(max_length=2,choices=JornadaInt.choices, default=JornadaInt.JM, verbose_name="Jornada que le interesa")
 
-    class GradoInt(models.Model):
+    class GradoInt(models.TextChoices):
         SEX='6', _('Grado Sexto')
         SEP='7', _('Grado Séptimo')
         OCT='8', _('Grado Octavo')
@@ -37,7 +37,7 @@ class Preregistro(models.Model):
 
     correo=models.CharField(max_length=40, verbose_name="Correo Electrónico") 
 
-    class TipoDocAcu(models.Model):
+    class TipoDocAcu(models.TextChoices):
             CC='CC', _('Cédula de Ciudadanía')
             CE='CE', _('Cédula de Extranjería')
             PP='PP', _('Pasaporte')

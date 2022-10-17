@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Usuario(models.Model):
-    class TipoDoc(models.Model):
+    class TipoDoc(models.TextChoices):
         CC='CC', _('Cédula de Ciudadanía')
         CE='CE', _('Cédula de Extranjería')
         PP='PP', _('Pasaporte')
@@ -18,7 +18,7 @@ class Usuario(models.Model):
 
     apellidos=models.CharField(max_length=60, verbose_name="Apellidos")
 
-    class Jornada(models.Model):
+    class Jornada(models.TextChoices):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
     Jornada=models.CharField(max_length=2,choices=Jornada.choices , default=Jornada.JM, verbose_name="Jornada")
@@ -31,21 +31,21 @@ class Usuario(models.Model):
 
     # falto estado
 
-    class Genero(models.Model):
+    class Genero(models.TextChoices):
         M='M', _('Masculino')
         F='F', _('Femenino')
         I='I', _('Indefinido')
     Genero=models.CharField(max_length=3,choices=Genero.choices, default=Genero.M, verbose_name="Género")
 #Falto pasword
 
-    class Rol(models.Model):
+    class Rol(models.TextChoices):
         ADMIN='ADMIN', _('Administrador')
         DIRECTIVO='DIRECTIVO', _('Directivo')
         SECRETARIA='SECRETARIA', _('Secretaria')
     Rol=models.CharField(max_length=3,choices=Rol.choices, default=Rol.ADMIN, verbose_name="Rol")
 
     
-    class Estado(models.Model):
+    class Estado(models.TextChoices):
         ACTIVO='1', _('Activo')
         INACTIVO='0', _('Inactivo')
     Estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
