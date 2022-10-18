@@ -21,7 +21,7 @@ class Usuario(models.Model):
     class Jornada(models.TextChoices):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
-    Jornada=models.CharField(max_length=2,choices=Jornada.choices , default=Jornada.JM, verbose_name="Jornada")
+    Jornada=models.CharField(max_length=10,choices=Jornada.choices , default=Jornada.JM, verbose_name="Jornada")
 
     telefono=models.CharField(max_length=20, verbose_name="Teléfono") 
 
@@ -42,7 +42,7 @@ class Usuario(models.Model):
         ADMIN='ADMIN', _('Administrador')
         DIRECTIVO='DIRECTIVO', _('Directivo')
         SECRETARIA='SECRETARIA', _('Secretaria')
-    Rol=models.CharField(max_length=3,choices=Rol.choices, default=Rol.ADMIN, verbose_name="Rol")
+    Rol=models.CharField(max_length=10,choices=Rol.choices, default=Rol.ADMIN, verbose_name="Rol")
 
     
     class Estado(models.TextChoices):

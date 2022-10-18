@@ -1,5 +1,4 @@
-from django.db import models
-from socket import TIPC_NODE_SCOPE
+
 from statistics import correlation
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -27,7 +26,7 @@ class Estudiante(models.Model):
     class Jornada(models.TextChoices):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
-    Jornada=models.CharField(max_length=2,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
+    Jornada=models.CharField(max_length=10,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
     telefono=models.CharField(max_length=20, verbose_name="Teléfono ")  
 
     

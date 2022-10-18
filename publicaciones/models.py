@@ -2,6 +2,7 @@ from dataclasses import FrozenInstanceError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from docentes.models import Docente
+from grado.models import Grado
 
 from usuarios.models import Usuario
 
@@ -26,7 +27,7 @@ class Publicacion(models.Model):
     class Jornada(models.TextChoices):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
-    Jornada=models.CharField(max_length=2,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
+    Jornada=models.CharField(max_length=10,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
 
     usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE,verbose_name='Usuario')
 

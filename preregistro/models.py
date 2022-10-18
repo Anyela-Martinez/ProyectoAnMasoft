@@ -1,4 +1,4 @@
-from socket import TIPC_NODE_SCOPE
+
 from statistics import correlation
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -23,7 +23,7 @@ class Preregistro(models.Model):
     class JornadaInt(models.TextChoices):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
-    JornadaInt=models.CharField(max_length=2,choices=JornadaInt.choices, default=JornadaInt.JM, verbose_name="Jornada que le interesa")
+    JornadaInt=models.CharField(max_length=10,choices=JornadaInt.choices, default=JornadaInt.JM, verbose_name="Jornada que le interesa")
 
     class GradoInt(models.TextChoices):
         SEX='6', _('Grado Sexto')
@@ -31,7 +31,7 @@ class Preregistro(models.Model):
         OCT='8', _('Grado Octavo')
         NOV='9', _('Grado Noveno')
         DEC='10', _('Grado Décimo')
-    GradoInt=models.CharField(max_length=5,choices=GradoInt.choices, default=GradoInt.JM, verbose_name="Grado que le interesa")
+    GradoInt=models.CharField(max_length=5,choices=GradoInt.choices, default=GradoInt.SEX, verbose_name="Grado que le interesa")
 
     direccion=models.CharField(max_length=40, verbose_name="Dirección") 
 

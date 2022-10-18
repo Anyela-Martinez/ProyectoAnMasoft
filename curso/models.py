@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from grado.models import Grado
 
 from usuarios.models import Usuario
 
@@ -23,7 +24,7 @@ class Curso(models.Model):
                 Noveno='Noveno', _(' Noveno')
                 Decimo='Decimo', _('Décimo')
                 Once='Once', _('Once')
-        GradoPerte=models.CharField(max_length=1,choices=GradoPerte.choices, default=GradoPerte.ACTIVO, verbose_name="Grado al que pertenece")
+        GradoPerte=models.CharField(max_length=10,choices=GradoPerte.choices, default=GradoPerte.Sexto, verbose_name="Grado al que pertenece")
 
         class Estado(models.TextChoices):
                 ACTIVO='1', _('Activo')
