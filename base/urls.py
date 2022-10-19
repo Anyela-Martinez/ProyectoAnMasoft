@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from base.views import inicioAdmin
+from base.views import inicio, inicioAdmin, usuarios_crear
 from usuarios.views import usuarios 
 
 
@@ -27,4 +27,6 @@ urlpatterns = [
     path('adm/', inicioAdmin, name='inicio-admin'),
     path('usuarios/', include('usuarios.urls')),
     path('',usuarios,name="usuarios"),
+    path('adm/', inicio, name='inicio'),
+    path('crear/', usuarios_crear, name='usuarios_crear'),
 ]
