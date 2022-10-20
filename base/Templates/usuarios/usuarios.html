@@ -2,6 +2,42 @@
 
 
 {% block contenido %}
-    <h1>Usuarios</h1>
+<table class="table">
+<thead>
+<tr>
+  <th>Tipo de Documento</th>
+  <th>Número de Documento</th>
+  <th>Nombres</th>
+  <th>Apellidos</th>
+  <th>Jornada</th>
+  <th>Teléfono</th>
+  <th>Dirección</th>
+  <th>Correo Electrónico</th>
+  <th>Género</th>
+  <th>Rol</th>
+  <th>Estado</th>
+</tr>
+</thead>
+<tbody>
+    
+    {% for usuario in usuarios %}
+    <tr>
+        <td>{{usuario.TipoDoc}}</td>
+        <td>{{usuario.numDoc}}</td>
+        <td>{{usuario.nombres}}</td>
+        <td>{{usuario.apellidos}}</td>
+        <td>{{usuario.Jornada}}</td>
+        <td>{{usuario.telefono}}</td>
+        <td>{{usuario.direccion}}</td>
+        <td>{{usuario.correo}}</td>
+        <td>{{usuario.Genero}}</td>
+        <td>{{usuario.Rol}}</td>
+        <td>{{usuario.Estado}}</td>
+    </tr>
+    {% endfor %}
+        
+
+</tbody>
+</table>
 {% endblock contenido %}
     

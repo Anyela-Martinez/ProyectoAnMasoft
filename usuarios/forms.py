@@ -1,8 +1,7 @@
-from dataclasses import field, fields
-from django import forms
+from django.forms import ModelForm
 from usuarios.models import Usuario
 
-class UsuarioForm(forms.ModelForm):
+class UsuarioForm(ModelForm):
     class Meta:
         model=Usuario
-        fields="__all__"
+        exclude=['estado']
