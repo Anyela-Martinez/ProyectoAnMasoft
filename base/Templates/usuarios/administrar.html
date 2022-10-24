@@ -1,0 +1,29 @@
+{% extends 'partials/body.html' %}
+
+{% block contenido %}
+<div class="row align-items-center m-5">
+  <div class="col">
+    <div class="d-grid gap-5 col mx-auto">
+      <a href="{% url 'adm-usuario' %}" class="btn btn-success" type="button"><br>Usuarios<br></a>
+      <a href="{% url 'adm-evento' %}" class="btn btn-success" type="button"><br>Evento<br></a>
+      <a href="{% url 'adm-publicacion' %}" class="btn btn-success" type="button"><br>Publicaciones<br></a>
+    </div>
+  </div>
+  <div class="col">
+    <div class="d-grid gap-5 col mx-auto">
+      <a href="{% url 'adm-docente' %}" class="btn btn-success" type="button"><br>Docentes<br></a>
+      <a href="{% url 'adm-grado' %}" class="btn btn-success" type="button"><br>Grado<br></a>
+      <a href="{% url 'adm-asignatura' %}" class="btn btn-success" type="button"><br>Asignatura<br></a>
+    </div>
+  </div>
+  <div class="col">
+    <div class="d-grid gap-5 col mx-auto">
+      <a href="{% url 'adm-estudiante' %}" class="btn btn-success" type="button"><br>Estudiantes<br></a>
+      <a href="{% url 'adm-curso' %}" class="btn btn-success" type="button"><br>Curso<br></a>
+      <a href="{% url 'adm-preregistro' %}" class="btn btn-success" type="button"><br>Pre-Registro<br></a>
+    </div>
+  </div>
+</div>
+{% endblock contenido %}
+
+

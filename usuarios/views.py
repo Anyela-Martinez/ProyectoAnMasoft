@@ -14,12 +14,16 @@ def usuarios(request):
     context={
         'titulo':titulo,
         'usuarios':usuarios
-
 }
     return render(request,'usuarios/usuarios.html',context) 
 
+def adm_usuario(request):
+    context={
+    }
+    return render(request, 'usuarios/adm-usuario.html', context)
+
 def usuarios_crear(request):
-    titulo="Usuarios-Crear"
+    titulo="Usuarios - Crear"
     if request.method == "POST":
         form=UsuarioForm(request.POST)
         if form.is_valid():
@@ -34,3 +38,20 @@ def usuarios_crear(request):
         'form':form
 }
     return render(request,'usuarios/usuarios-crear.html',context) 
+
+def login(request):
+    context={
+    }
+    return render(request, 'usuarios/login.html', context)
+
+def administradores(request):
+    context={
+    }
+    return render(request, 'usuarios/administradores.html', context)
+
+def administrar(request):
+    context={
+    }
+    return render(request, 'usuarios/administrar.html', context)
+
+
