@@ -1,0 +1,26 @@
+{% extends 'partials/body.html' %}
+
+{% block contenido %}
+<div class="row align-items-center m-5">
+    <div class="col">
+        <div class="d-grid gap-5 col-6 mx-auto">
+            <a href="..." class="btn btn-success" type="button">Crear Estudiante</a>
+            <a href="..." class="btn btn-success" type="button">Modificar Estudiante</a>
+            
+          </div>
+    </div>
+    <div class="col">
+        <div class="d-grid gap-5 col-6 mx-auto">
+            <a href="..." class="btn btn-success" type="button">Buscar Estudiante</a>
+            <a href="..." class="btn btn-success" type="button">Listar Estudiante</a>
+          </div>
+    </div>
+    
+  </div>
+{% endblock contenido %}
+
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}

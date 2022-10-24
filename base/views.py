@@ -4,11 +4,8 @@ from django.shortcuts import render, redirect
 from usuarios.forms import UsuarioForm
 
 def inicio(request):
-    
-    context={
-        
+    context={    
     }
-
     return render(request,'inicio.html', context)
 
 def usuarios_crear(request):
@@ -18,7 +15,6 @@ def usuarios_crear(request):
         'titulo':titulo,
         'form':form
     }
-
     return render(request,'usuarios/usuarios-crear.html', context)
 
 def inicioAdmin(request):
@@ -26,5 +22,6 @@ def inicioAdmin(request):
     context={
         'titulo':titulo
     }
-
     return render(request,'index-admin.html', context)
+
+

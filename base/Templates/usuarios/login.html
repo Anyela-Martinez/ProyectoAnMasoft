@@ -1,61 +1,87 @@
+{% extends 'partials/body.html' %}
+
+{% block contenido %}
+<body class="login-page" style="min-height: 466px;">
+  <div class="login-box">
+
+      <div class="card card-outline card-primary">
+          <div class="card-header text-center">
+              <p class="h1"> Iniciar Sesión</p>
+          </div>
+          <div class="card-body">
+              <p class="login-box-msg">Bienvenido</p>
+              <form action="../../index3.html" method="post">
+                  <div class="input-group mb-3">
+                      <input type="email" class="form-control" placeholder="Correo">
+                      <div class="input-group-append">
+                          <div class="input-group-text">
+                              <span class="fas fa-envelope"></span>
+                          </div>
+                      </div>
+                      <div data-lastpass-icon-root="true"
+                          style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                      </div>
+                  </div>
+                  <div class="input-group mb-3">
+                      <input type="password" class="form-control" placeholder="Contraseña">
+                      <div class="input-group-append">
+                          <div class="input-group-text">
+                              <span class="fas fa-lock"></span>
+                          </div>
+                      </div>
+                      <div data-lastpass-icon-root="true"
+                          style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-8">
+                          <div class="icheck-primary">
+                              <input type="checkbox" id="remember">
+                              <label for="remember">
+                                  Recordarme
+                              </label>
+                          </div>
+                      </div>
+
+                      <div class="col-4">
+                          <a href="{% url 'administradores' %}" type="submit" class="btn btn-primary btn-block">Ingresar</a>
+                      </div>
+
+                  </div>
+              </form>
+             
+
+              <p class="mb-1">
+                  <a href="forgot-password.html">Olvidé mi contraseña</a>
+              </p>
+              
+          </div>
+
+      </div>
+
+  </div>
+
+
+  <script src="../../plugins/jquery/jquery.min.js"></script>
+
+  <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../../dist/js/adminlte.min.js?v=3.2.0"></script>
+
+
+  <div style="position: static !important;">
+      <div data-lastpass-infield="true"
+          style="position: absolute !important; top: 0px !important; left: 0px !important;"></div>
+  </div>
+  {% include 'partials/js.html' %}
+</body>
+{% endblock contenido %}
+
+
+
 {% load static %}
 {% load bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
 
-<div class="container col-md-8">
-    <div class="row">
-      <div class=" container col-md-8 border border-dark border-2">
-        <div class="container col-md-10">
-          <div class="row">
-            <div class="col border border-dark border-2 m-5 p-5 green-claro">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6 m-3 border border-dark col-md-6 mx-auto item-ppal text-white">Usuario</div>
-                </div>
-                <div class="input-group mb-3 border border-dark">
-                  <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Nombre de usuario" aria-describedby="basic-addon1">
-                </div>
-                <div class="row">
-                  <div class="col-6 m-3 col-md-6 border border-dark mx-auto item-ppal text-white">Contraseña</div>
-                </div>
-                <div class="input-group mb-3 border border-dark">
-                  <input type="text" class="form-control" placeholder="Contraseña" aria-label="Nombre de usuario" aria-describedby="basic-addon1">
-                </div>
-              </div>
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <a href="/Administradores.html" class="btn border border-dark item-ppal text-white" type="button"> Ingresar </a>
-                <button class="btn border border-dark btn-orange-p" type="button"><b>Olvide mi contraseña</b></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <div class="partfooter">
-        <img src="/img/ESCUDO DEL COLEGIO.png" alt="">
-    </div>
-    <div class="partfooter">
-        <h4>Servicios</h4>
-        <a href="#">Services 1</a>
-        <a href="#">Services 2</a>
-        <a href="#">Services 3</a>
-    </div>
-    <div class="partfooter">
-        <h4>Acerca de</h4>
-        <a href="#">About 1</a>
-        <a href="#">About 2</a>
-        <a href="#">About 3</a>
-    </div>
-    <div class="partfooter">
-        <h4>Redes Sociales</h4>
-        <div class="social-media">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-youtube"></i>
-        </div>
-    </div>
