@@ -27,6 +27,11 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('adm/', inicioAdmin, name='inicio-admin'),
     path('usuarios/', include('usuarios.urls')),
+<<<<<<< HEAD
+    path('usuario/',usuarios,name="usuarios"),
+    path('adm/', inicio, name='inicio'),
+    path('crear/', usuarios_crear, name='usuarios_crear'),
+=======
     path('asignatura/', include('asignatura.urls')),
     path('curso/', include('curso.urls')),
     path('docentes/', include('docentes.urls')),
@@ -35,4 +40,5 @@ urlpatterns = [
     path('grado/', include('grado.urls')),
     path('preregistro/', include('preregistro.urls')),
     path('publicaciones/', include('publicaciones.urls')),
+>>>>>>> 2242b126d18196ed62239a29f540b084b73f5a2a
 ]
