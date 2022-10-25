@@ -1,6 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
-
+from docentes.forms import DocenteForm
 from usuarios.forms import UsuarioForm
 
 def inicio(request):
@@ -24,4 +24,11 @@ def inicioAdmin(request):
     }
     return render(request,'index-admin.html', context)
 
-
+def docentes_crear(request):
+    titulo="Docentes-crear"
+    form=DocenteForm()
+    context={
+        'titulo':titulo,
+        'form':form
+    }
+    return render(request,'docentes/docentes-crear.html', context)

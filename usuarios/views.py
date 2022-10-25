@@ -1,7 +1,5 @@
 
-
 from django.shortcuts import redirect, render
-
 from usuarios.forms import UsuarioForm
 from usuarios.models import Usuario
 from django.contrib import messages
