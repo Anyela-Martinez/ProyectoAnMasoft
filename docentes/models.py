@@ -5,6 +5,7 @@ from usuarios.models import Usuario
 # Create your models here.
 
 class Docente(models.Model):
+<<<<<<< Updated upstream
     class TipoDoc(models.TextChoices):
         CC='CC', _('Cédula de Ciudadanía')
         CE='CE', _('Cédula de Extranjería')
@@ -18,6 +19,22 @@ class Docente(models.Model):
     apellidos=models.CharField(max_length=60, verbose_name="Apellidos")
     
     class Genero(models.TextChoices):
+=======
+        class TipoDoc(models.TextChoices):
+                CC='CC', _('Cédula de Ciudadanía')
+                CE='CE', _('Cédula de Extranjería')
+                PP='PP', _('Pasaporte')
+        TipoDoc=models.CharField(max_length=3,choices=TipoDoc.choices, default=TipoDoc.CC, verbose_name="Tipo de Documento") 
+
+
+numDoc=models.CharField(max_length=60, verbose_name="Número de Documento")
+
+nombres=models.CharField(max_length=60, verbose_name="Nombres")
+
+apellidos=models.CharField(max_length=60, verbose_name="Apellidos")
+
+class Genero(models.TextChoices):
+>>>>>>> Stashed changes
         M='M', _('Masculino')
         F='F', _('Femenino')
         I='I', _('Indefinido')
