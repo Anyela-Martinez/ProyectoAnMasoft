@@ -18,18 +18,18 @@
     </thead>
     <tbody>
         
-        {% for docente in docentes %}
-        <tr>
-            <td>{{docente.TipoDoc}}</td>
-            <td>{{docente.numDoc}}</td>
-            <td>{{docente.nombres}}</td>
-            <td>{{docente.apellidos}}</td>
-            <td>{{docente.Genero}}</td>
-            <td>{{docente.telefono}}</td>
-            <td>{{docente.direccion}}</td>
-            <td>{{docente.correo}}</td>
-            <td>{{docente.Jornada}}</td>
-        </tr>
+    {% for docente in docentes %}
+    <tr>
+        <td>{{docente.TipoDoc}}</td>
+        <td>{{docente.numDoc}}</td>
+        <td>{{docente.nombres}}</td>
+        <td>{{docente.apellidos}}</td>
+        <td>{{docente.Genero}}</td>
+        <td>{{docente.telefono}}</td>
+        <td>{{docente.direccion}}</td>
+        <td>{{docente.correo}}</td>
+        <td>{{docente.Jornada}}</td>
+    </tr>
         {% endfor %}
             
     

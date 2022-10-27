@@ -1,9 +1,9 @@
 from django.shortcuts import redirect, render
 from docentes.forms import DocenteForm
 from docentes.models import Docente
+from django.contrib import messages
 
 # Create your views her
-
 
 def docente(request):
     titulo="Docente"
