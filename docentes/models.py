@@ -27,7 +27,7 @@ class Docente(models.Model):
     
         direccion=models.CharField(max_length=40, verbose_name="Dirección") 
     
-    correo=models.CharField(max_length=60, verbose_name="Correo Electrónico") 
+        correo=models.CharField(max_length=60, verbose_name="Correo Electrónico") 
     
         class Estado(models.TextChoices):
                 ACTIVO='1', _('Activo')

@@ -7,10 +7,10 @@ from django.contrib import messages
 
 def docente(request):
     titulo="Docente"
-    docente= Docente.objects.all()
+    docentes= Docente.objects.all()
     context={
         'titulo':titulo,
-        'docente':docente
+        'docentes':docentes
 }
     return render(request,'docentes/docente.html',context) 
 
