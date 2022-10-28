@@ -6,10 +6,10 @@ from eventos.models import Evento
 # Create your views her
 def evento(request):
     titulo="Evento"
-    evento= Evento.objects.all()
+    eventos= Evento.objects.all()
     context={
         'titulo':titulo,
-        'evento':evento
+        'eventos':eventos
 
 }
     return render(request,'eventos/evento.html',context) 
@@ -27,7 +27,7 @@ def eventos_crear(request):
         form=EventoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('eventos')
+            return redirect('evento')
         else:
             print("Error")
     else:
