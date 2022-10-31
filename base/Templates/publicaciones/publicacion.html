@@ -1,0 +1,36 @@
+{% extends 'partials/body.html' %}
+
+
+{% block contenido %}
+<table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Tipo de Evento</th>
+      <th scope="col">Nombre del evento</th>
+      <th scope="col">Fecha del Evento</th>
+      <th scope="col">Hora del Evento</th>
+      <th scope="col">Lugar del evento</th> 
+      <th scope="col">Encargado del evento</th>
+      <th scope="col">Duracion del envento</th>
+      <th scope="col">Invitados</th>
+    </tr>
+    </thead>
+    <tbody>
+        
+        {% for evento in eventos %}
+        <tr>
+            <td>{{evento.TipoEvento}}</td>
+            <td>{{evento.horaEve}}</td>
+            <td>{{evento.fechaEve}}</td>
+            <td>{{evento.lugarEve}}</td>
+            <td>{{evento.nombreEve}}</td>
+            <td>{{evento.encagEve}}</td>
+            <td>{{evento.duracionEve}}</td>
+            <td>{{evento.invitados}}</td>
+        </tr>
+        {% endfor %}
+            
+    
+    </tbody>
+    </table>
+{% endblock contenido %}

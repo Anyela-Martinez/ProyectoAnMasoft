@@ -2,7 +2,7 @@ from multiprocessing import context
 from django.shortcuts import render, redirect
 from docentes.forms import DocenteForm
 from eventos.forms import EventoForm
-from usuarios.forms import UsuarioForm
+
 
 def inicio(request):
     context={    
@@ -42,3 +42,12 @@ def eventos_crear(request):
         'form':form
     }
     return render(request,'eventos/eventos-crear.html', context)
+
+def publicaciones_crear(request):
+    titulo="Eventos-crear"
+    form= PublicacionForm()
+    context={
+        'titulo':titulo,
+        'form':form
+    }
+    return render(request,'publicaciones/publicaciones-crear.html', context)
