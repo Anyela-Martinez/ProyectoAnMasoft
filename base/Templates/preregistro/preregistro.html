@@ -1,0 +1,51 @@
+{% extends 'partials/body.html' %}
+
+
+{% block contenido %}
+<table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Tipo de Documento</th>
+      <th scope="col">Número de Documento</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Jornada que le Interesa</th>
+      <th scope="col">Grado que le Interesa</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Correo Electrónico</th>
+      <th scope="col">Tipo de Documento del Acudiente</th>
+      <th scope="col">Número de Documento del Acudiente</th>
+      <th scope="col">Nombres del Acudiente</th>
+      <th scope="col">Apellidos del Acudiente</th>
+      <th scope="col">Teléfono del Acudiente</th>
+      <th scope="col">Correo Electrónico del Acudiente</th>
+      <th scope="col">Colegio de procedencia</th>
+    </tr>
+    </thead>
+    <tbody>
+        
+    {% for preregistro in preregistro %}
+    <tr>
+        <td>{{preregistro.TipoDoc}}</td>
+        <td>{{preregistro.numDoc}}</td>
+        <td>{{preregistro.nombres}}</td>
+        <td>{{preregistro.apellidos}}</td>
+        <td>{{preregistro.JornadaInt}}</td>
+        <td>{{preregistro.GradoInt}}</td>
+        <td>{{preregistro.direccion}}</td>
+        <td>{{preregistro.correo}}</td>
+        <td>{{preregistro.TipoDocAcu}}</td>
+        <td>{{preregistro.numDocAcu}}</td>
+        <td>{{preregistro.nombresAcu}}</td>
+        <td>{{preregistro.apellidosAcu}}</td>
+        <td>{{preregistro.telefonoAcu}}</td>
+        <td>{{preregistro.correoAcu}}</td>
+        <td>{{preregistro.colProce}}</td>
+    </tr>
+        {% endfor %}
+            
+    
+    </tbody>
+    </table>
+{% endblock contenido %}
+    

@@ -1,11 +1,13 @@
 from django.shortcuts import redirect, render
-
+from preregistro.forms import PreregistroForm
 from preregistro.models import Preregistro
+from django.contrib import messages
 
 # Create your views her
 
 def preregistro(request):
     titulo="Preregistro"
+    preregistro= Preregistro.objects.all()
     context={
         'titulo':titulo,
         'preregistro':preregistro
@@ -19,3 +21,20 @@ def adm_preregistro(request):
 
     }
     return render(request, 'preregistro/adm-preregistro.html', context)
+
+def preregistro_crear(request):
+    titulo="Preregistro-Crear"
+    if request.method == "POST":
+        form=PreregistroForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('preregistro')
+        else:
+            print("Error")
+    else:
+        form=PreregistroForm()
+    context={
+        'titulo':titulo,
+        'form':form
+}
+    return render(request,'preregistro/preregistro-crear.html',context) 

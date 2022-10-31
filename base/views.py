@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from docentes.forms import DocenteForm
 from eventos.forms import EventoForm
 from usuarios.forms import UsuarioForm
+from preregistro.forms import PreregistroForm
 
 def inicio(request):
     context={    
@@ -42,3 +43,12 @@ def eventos_crear(request):
         'form':form
     }
     return render(request,'eventos/eventos-crear.html', context)
+
+def preregistro_crear(request):
+    titulo="Preregistro-crear"
+    form=PreregistroForm()
+    context={
+        'titulo':titulo,
+        'form':form
+    }
+    return render(request,'preregistro/preregistro-crear.html', context)
