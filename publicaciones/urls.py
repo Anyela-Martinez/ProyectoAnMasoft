@@ -5,4 +5,5 @@ from publicaciones.views import adm_publicacion, publicacion
 urlpatterns = [
     path('',publicacion,name="publicacion"),
     path('adm/',adm_publicacion,name="adm-publicacion"),
+    path('crear/',publicaciones_crear,name="eventos-crear"),
 ]
