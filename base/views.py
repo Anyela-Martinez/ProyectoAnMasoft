@@ -5,6 +5,7 @@ from eventos.forms import EventoForm
 from publicaciones.forms import PublicacionForm
 from usuarios.forms import UsuarioForm
 from preregistro.forms import PreregistroForm
+from django.views.defaults import page_not_found
 
 def inicio(request):
     context={    
@@ -53,6 +54,9 @@ def preregistro_crear(request):
         'form':form
     }
     return render(request,'preregistro/preregistro-crear.html', context)
+
+def error_404(request,exception):
+    return page_not_found(request,'404.html')
 
 def publicaciones_crear(request):
     titulo="Publicaciones-crear"
