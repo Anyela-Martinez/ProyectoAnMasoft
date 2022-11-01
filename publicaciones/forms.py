@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from publicaciones.apps import PublicacionesConfig
+from publicaciones.models import Publicacion
 
 
-class EventoForm(ModelForm):
+class PublicacionForm(ModelForm):
     class Meta:
-        model=PublicacionesConfig
+        model=Publicacion
         exclude=['Estado']

@@ -1,6 +1,5 @@
 from django.shortcuts import redirect, render
-
-
+from publicaciones.forms import PublicacionForm
 from publicaciones.models import Publicacion
 
 # Create your views her
