@@ -7,12 +7,16 @@ from grado.models import Grado
 from usuarios.models import Usuario
 
 # Create your models here.
-class TipoPublicacion(models.Model):
-    nombre=models.CharField(max_length=60, verbose_name="Nombre del Tipo de Publicación")
-    
-    descripcion=models.CharField(max_length=100, verbose_name="Descripción de la publicación")
+
 
 class Publicacion(models.Model):
+    class TipoPublicacion(models.TextChoices):
+        Informativa='INF', _('Publicacion Informativa')
+        Academica='ACA', _('Publicacion Academica')
+        Cultural='CUL', _('Publicacion Cultural')
+        Pedagica='PEDA', _('Publicacion Pedagodica')
+    TipoPublicacion=models.CharField(max_length=20, choices=TipoPublicacion.choices , default=TipoPublicacion.Cultural, verbose_name="Tipo de Publicacion")
+    
     nombrePubli=models.CharField(max_length=60, verbose_name="Nombre de la Publicación")
 
     descripPublic=models.CharField(max_length=60, verbose_name="Descripción de la Publicación")
@@ -32,8 +36,6 @@ class Publicacion(models.Model):
     usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE,verbose_name='Usuario')
 
     docente=models.ForeignKey(Docente, on_delete=models.CASCADE,verbose_name='Docente')
-
-    tipoPublicacion=models.ForeignKey(TipoPublicacion, on_delete=models.CASCADE,verbose_name='Tipo de Publicación')
 
     grado=models.ForeignKey(Grado, on_delete=models.CASCADE,verbose_name='Grado')
 
