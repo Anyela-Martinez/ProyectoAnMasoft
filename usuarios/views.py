@@ -1,5 +1,3 @@
-
-from multiprocessing import context
 from django.shortcuts import redirect, render
 from usuarios.forms import UsuarioForm
 from usuarios.models import Usuario
@@ -54,10 +52,8 @@ def usuarios_editar(request, pk):
         'titulo':titulo,
         'form':form
     }
-    return render(request,'usuarios/usuarios-crear',context)
+    return render(request,'usuarios/usuarios-crear.html',context)
 
-
-    
 def login(request):
     context={
     }
