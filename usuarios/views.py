@@ -1,4 +1,5 @@
 
+from multiprocessing import context
 from django.shortcuts import redirect, render
 from usuarios.forms import UsuarioForm
 from usuarios.models import Usuario
@@ -37,6 +38,25 @@ def usuarios_crear(request):
 }
     return render(request,'usuarios/usuarios-crear.html',context) 
 
+def usuarios_editar(request, pk):
+    titulo="Usuarios - Editar"
+    usuario= Usuario.objects.get(id=pk)
+    if request.method == "POST":
+        form= UsuarioForm(request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('usuarios')
+        else:
+            print("Error al guardar")
+    else:
+        form= UsuarioForm(instance=usuario)
+    context={
+        'titulo':titulo,
+        'form':form
+    }
+    return render(request,'partials/crear.html',context)
+      
+    
 def login(request):
     context={
     }
@@ -51,5 +71,6 @@ def administrar(request):
     context={
     }
     return render(request, 'usuarios/administrar.html', context)
+
 
 

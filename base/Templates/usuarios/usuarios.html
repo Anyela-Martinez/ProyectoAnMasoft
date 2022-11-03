@@ -3,41 +3,50 @@
 
 {% block contenido %}
 <table class="table">
-<thead>
-<tr>
-  <th scope="col">Tipo de Documento</th>
-  <th scope="col">Número de Documento</th>
-  <th scope="col">Nombres</th>
-  <th scope="col">Apellidos</th>
-  <th scope="col">Jornada</th>
-  <th scope="col">Teléfono</th>
-  <th scope="col">Dirección</th>
-  <th scope="col">Correo Electrónico</th>
-  <th scope="col">Género</th>
-  <th scope="col">Rol</th>
-  <th scope="col">Estado</th>
-</tr>
-</thead>
-<tbody>
-    
+  <thead>
+    <tr>
+      <th scope="col">Tipo de Documento</th>
+      <th scope="col">Número de Documento</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Jornada</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Correo Electrónico</th>
+      <th scope="col">Género</th>
+      <th scope="col">Rol</th>
+      <th scope="col">Estado</th>
+
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
     {% for usuario in usuarios %}
     <tr>
-        <td>{{usuario.TipoDoc}}</td>
-        <td>{{usuario.numDoc}}</td>
-        <td>{{usuario.nombres}}</td>
-        <td>{{usuario.apellidos}}</td>
-        <td>{{usuario.Jornada}}</td>
-        <td>{{usuario.telefono}}</td>
-        <td>{{usuario.direccion}}</td>
-        <td>{{usuario.correo}}</td>
-        <td>{{usuario.Genero}}</td>
-        <td>{{usuario.Rol}}</td>
-        <td>{{usuario.Estado}}</td>
+
+      {% if usuario.Estado != '3' %}
+      <td>{{usuario.TipoDoc}}</td>
+      <td>{{usuario.numDoc}}</td>
+      <td>{{usuario.nombres}}</td>
+      <td>{{usuario.apellidos}}</td>
+      <td>{{usuario.Jornada}}</td>
+      <td>{{usuario.telefono}}</td>
+      <td>{{usuario.direccion}}</td>
+      <td>{{usuario.correo}}</td>
+      <td>{{usuario.Genero}}</td>
+      <td>{{usuario.Rol}}</td>
+      <td>{{usuario.Estado}}</td>
+      <td><a class="btn btn-success" href="{% url 'usuarios-editar' usuario.id
+          %}"><i class="fas fa-edit"></i></a>
+        <a class="btn btn-danger" href="{% url 'usuarios-eliminar' usuario.id
+          %}"><i class="fas fa-trash-alt"></i></a>
+      </td>
+      {% endif %}
+
     </tr>
     {% endfor %}
-        
 
-</tbody>
+  </tbody>
 </table>
 {% endblock contenido %}
-    
