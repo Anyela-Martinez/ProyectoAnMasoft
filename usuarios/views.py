@@ -55,7 +55,6 @@ def usuarios_editar(request, pk):
         'form':form
     }
     return render(request,'partials/crear.html',context)
-      
     
 def login(request):
     context={
