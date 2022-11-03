@@ -54,7 +54,9 @@ def usuarios_editar(request, pk):
         'titulo':titulo,
         'form':form
     }
-    return render(request,'partials/crear.html',context)
+    return render(request,'usuarios/usuarios-crear',context)
+
+
     
 def login(request):
     context={
