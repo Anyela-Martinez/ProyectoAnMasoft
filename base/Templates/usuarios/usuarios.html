@@ -24,8 +24,6 @@
 
     {% for usuario in usuarios %}
     <tr>
-
-      {% if usuario.Estado != '1' %}
       <td>{{usuario.TipoDoc}}</td>
       <td>{{usuario.numDoc}}</td>
       <td>{{usuario.nombres}}</td>
@@ -37,12 +35,7 @@
       <td>{{usuario.Genero}}</td>
       <td>{{usuario.Rol}}</td>
       <td>{{usuario.Estado}}</td>
-      <td><a class="btn btn-success" href="{% url 'usuarios-editar' usuario.id
-          %}"><i class="fas fa-edit"></i></a>
-        <a class="btn btn-danger" href="{% url 'usuarios-eliminar' usuario.id
-          %}"><i class="bi bi-battery"></i></a>
-      </td>
-      {% endif %}
+      <td><a class="btn btn-success" href="{% url 'usuarios-editar' usuario.id %}"></a><i class="fa fas-edit"></i></td>
 
     </tr>
     {% endfor %}
