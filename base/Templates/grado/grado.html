@@ -1,0 +1,26 @@
+{% extends 'partials/body.html' %}
+
+
+{% block contenido %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre del Grado</th>
+      <th scope="col">Número del Grado</th>
+
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for grado in grado %}
+    <tr>
+      <td>{{grado.nomGrado}}</td>
+      <td>{{grado.numGrado}}</td>
+      <td><a class="btn btn-success" href="#"></a><i class="fa fas-edit"></i></td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock contenido %}

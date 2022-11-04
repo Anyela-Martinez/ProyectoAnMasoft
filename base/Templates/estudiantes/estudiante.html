@@ -1,0 +1,58 @@
+{% extends 'partials/body.html' %}
+
+
+{% block contenido %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tipo de Documento</th>
+      <th scope="col">Número de Documento</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Jornada</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Correo electrónico</th>
+      <th scope="col">Género</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Tipo de Documento del Acudiente</th>
+      <th scope="col">Número de Documento del Acudiente</th>
+      <th scope="col">Nombres del Acudiente</th>
+      <th scope="col">Apellidos del Acudiente</th>
+      <th scope="col">Teléfono del Acudiente</th>
+      <th scope="col">Correo electrónico del Acudiente</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Curso</th>
+
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for estudiante in estudiante %}
+    <tr>
+      <td>{{estudiante.TipoDoc}}</td>
+      <td>{{estudiante.numDoc}}</td>
+      <td>{{estudiante.nombres}}</td>
+      <td>{{estudiante.apellidos}}</td>
+      <td>{{estudiante.Jornada}}</td>
+      <td>{{estudiante.telefono}}</td>
+      <td>{{estudiante.direccion}}</td>
+      <td>{{estudiante.correo}}</td>
+      <td>{{estudiante.Genero}}</td>
+      <td>{{estudiante.Estado}}</td>
+      <td>{{estudiante.TipoDocAcu}}</td>
+      <td>{{estudiante.numDocAcu}}</td>
+      <td>{{estudiante.nombresAcu}}</td>
+      <td>{{estudiante.apellidosAcu}}</td>
+      <td>{{estudiante.telefonoAcu}}</td>
+      <td>{{estudiante.correoAcu}}</td>
+      <td>{{estudiante.usuario}}</td>
+      <td>{{estudiante.curso}}</td>
+      <td><a class="btn btn-success" href="#"></a><i class="fa fas-edit"></i></td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+{% endblock contenido %}

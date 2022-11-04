@@ -27,8 +27,8 @@ class Estudiante(models.Model):
         JM='MAÑANA', _('Jornada Mañana')
         JT='TARDE', _('Jornada Tarde')
     Jornada=models.CharField(max_length=10,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
+    
     telefono=models.CharField(max_length=20, verbose_name="Teléfono ")  
-
     
     direccion=models.CharField(max_length=40, verbose_name="Dirección") 
 
@@ -66,5 +66,3 @@ class Estudiante(models.Model):
     curso=models.ForeignKey(Curso, on_delete=models.CASCADE,verbose_name='Curso')
 
     
-
-# Create your models here.
