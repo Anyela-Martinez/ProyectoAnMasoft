@@ -14,7 +14,6 @@
       <th scope="col">Dirección</th>
       <th scope="col">Correo Electrónico</th>
       <th scope="col">Jornada</th>
-    </tr>
     </thead>
     <tbody>
         
@@ -29,6 +28,7 @@
         <td>{{docente.direccion}}</td>
         <td>{{docente.correo}}</td>
         <td>{{docente.Jornada}}</td>
+        <td><a class="btn btn-success" href="{% url 'docentes-editar' docente.id %}"></a><i class="fa fas-edit"></i></td>
     </tr>
         {% endfor %}
             

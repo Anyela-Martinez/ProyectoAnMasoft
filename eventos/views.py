@@ -37,3 +37,21 @@ def eventos_crear(request):
         'form':form
 }
     return render(request,'eventos/eventos-crear.html',context) 
+
+def eventos_editar(request, pk):
+    titulo="Eventos - Editar"
+    evento= Evento.objects.get(id=pk)
+    if request.method == "POST":
+        form= EventoForm(request.POST, instance=evento)
+        if form.is_valid():
+            form.save()
+            return redirect('evento')
+        else:
+            print("Error al guardar")
+    else:
+        form= EventoForm(instance=evento)
+    context={
+        'titulo':titulo,
+        'form':form
+    }
+    return render(request,'eventos/eventos-crear.html',context) 

@@ -16,7 +16,6 @@
       <th scope="col">Género</th>
       <th scope="col">Rol</th>
       <th scope="col">Estado</th>
-
       <th scope="col">Acciones</th>
     </tr>
   </thead>
@@ -36,7 +35,6 @@
       <td>{{usuario.Rol}}</td>
       <td>{{usuario.Estado}}</td>
       <td><a class="btn btn-success" href="{% url 'usuarios-editar' usuario.id %}"></a><i class="fa fas-edit"></i></td>
-
     </tr>
     {% endfor %}
 

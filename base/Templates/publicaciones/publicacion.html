@@ -30,6 +30,7 @@
             <td>{{evento.docente}}</td>
             <td>{{evento.tipoPublicacion}}</td>
             <td>{{evento.grado}}</td>
+            <td><a class="btn btn-success" href="{% url 'publicaciones-editar' publicacion.id %}"></a><i class="fa fas-edit"></i></td>
         </tr>
         {% endfor %}
             

@@ -37,3 +37,21 @@ def publicaciones_crear(request):
         'form':form
 }
     return render(request,'publicaciones/publicaciones-crear.html',context) 
+
+def publicaciones_editar(request, pk):
+    titulo="publicaciones - Editar"
+    publicacion= Publicacion.objects.get(id=pk)
+    if request.method == "POST":
+        form= PublicacionForm(request.POST, instance=publicacion)
+        if form.is_valid():
+            form.save()
+            return redirect('publicacion')
+        else:
+            print("Error al guardar")
+    else:
+        form= PublicacionForm(instance=publicacion)
+    context={
+        'titulo':titulo,
+        'form':form
+    }
+    return render(request,'publicaciones/publicaciones-crear.html',context) 

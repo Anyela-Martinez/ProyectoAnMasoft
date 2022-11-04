@@ -37,4 +37,22 @@ def docentes_crear(request):
         'titulo':titulo,
         'form':form
 }
+    return render(request,'docentes/docentes-crear.html',context)
+
+def docentes_editar(request, pk):
+    titulo="Docentes - Editar"
+    docente= Docente.objects.get(id=pk)
+    if request.method == "POST":
+        form= DocenteForm(request.POST, instance=docente)
+        if form.is_valid():
+            form.save()
+            return redirect('docente')
+        else:
+            print("Error al guardar")
+    else:
+        form= DocenteForm(instance=docente)
+    context={
+        'titulo':titulo,
+        'form':form
+    }
     return render(request,'docentes/docentes-crear.html',context) 
