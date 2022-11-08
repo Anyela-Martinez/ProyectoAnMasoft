@@ -41,7 +41,7 @@ def preregistro_crear(request):
 
 def preregistro_editar(request, pk):
     titulo="Preregistros - Editar"
-    preregistro= Preregistro.objects.get(id=pk)
+    preregistrobhb= Preregistro.objects.get(id=pk)
     if request.method == "POST":
         form= PreregistroForm(request.POST, instance=preregistro)
         if form.is_valid():
