@@ -28,7 +28,7 @@
         <td>{{docente.direccion}}</td>
         <td>{{docente.correo}}</td>
         <td>{{docente.Jornada}}</td>
-        <td><a class="btn btn-success" href="{% url 'docentes-editar' docente.id %}"></a><i class="fa fas-edit"></i></td>
+        <td><a class="btn btn-success" href="{% url 'docentes-editar' docente.id %}"><i class="fas fa-pencil-alt"></i></a></td>
     </tr>
         {% endfor %}
             

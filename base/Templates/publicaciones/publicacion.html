@@ -4,37 +4,37 @@
 {% block contenido %}
 <table class="table">
     <thead>
-    <tr>
-      <th scope="col">Tipo de publicacion</th>
-      <th scope="col">Nombre de la publicacion</th>
-      <th scope="col">descripcion de la publicacion</th>
-      <th scope="col">link de la publicacion</th>
-      <th scope="col">Estado</th> 
-      <th scope="col">Jornada</th>
-      <th scope="col">Usuario</th>
-      <th scope="col">Docente</th>
-      <th scope="col">Tipo de Publicacion</th>
-      <th scope="col">Grado</th>
-    </tr>
+        <tr>
+            <th scope="col">Tipo de publicación</th>
+            <th scope="col">Nombre de la publicación</th>
+            <th scope="col">Descripcion de la publicación</th>
+            <th scope="col">link de la publicación</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Jornada</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Docente</th>
+            <th scope="col">Grado</th>
+            <th scope="col">Acciones</th>
+        </tr>
     </thead>
     <tbody>
-        
-        {% for evento in eventos %}
+
+        {% for publicacion in publicacion %}
         <tr>
-            <td>{{evento.TipoPublicacion}}</td>
-            <td>{{evento.nombrePubli}}</td>
-            <td>{{evento.descripPublic}}</td>
-            <td>{{evento.linkPubli}}</td>
-            <td>{{evento.Estado}}</td>
-            <td>{{evento.usuario}}</td>
-            <td>{{evento.docente}}</td>
-            <td>{{evento.tipoPublicacion}}</td>
-            <td>{{evento.grado}}</td>
-            <td><a class="btn btn-success" href="{% url 'publicaciones-editar' publicacion.id %}"></a><i class="fa fas-edit"></i></td>
+            <td>{{publicacion.TipoPublicacion}}</td>
+            <td>{{publicacion.nombrePubli}}</td>
+            <td>{{publicacion.descripPublic}}</td>
+            <td>{{publicacion.linkPubli}}</td>
+            <td>{{publicacion.Estado}}</td>
+            <td>{{publicacion.Jornada}}</td>
+            <td>{{publicacion.usuario}}</td>
+            <td>{{publicacion.docente}}</td>
+            <td>{{publicacion.grado}}</td>
+            <td><a class="btn btn-success" href="{% url 'publicaciones-editar' publicacion.id %}"><i class="fas fa-pencil-alt"></i></a></td>
         </tr>
         {% endfor %}
-            
-    
+
+
     </tbody>
-    </table>
+</table>
 {% endblock contenido %}

@@ -1,26 +1,36 @@
 {% load static %}
-<nav class="navbar navbar-light  bg-success  ">
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="...">
-      <img src="{% static 'img/zyro-image.png' %}" class="img-circle elevation-2" alt="User Image" width="154" height="124" class="d-inline-block align-text-top"><b>Institución Educativa Técnico Ambiental Fernández Guerra</b></a>
+    <a class="navbar-brand text-white text-center">
+      <img src="{% static 'img/zyro-image.png' %}" class="img-circle
+        elevation-2" alt="User Image" width="154" height="124"
+        class="d-inline-block align-text-top"><b>Institución Educativa Técnico
+        Ambiental Fernández Guerra</b>
+    </a>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-success ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
       <div class="container-fluid">
-       
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#"><b>Inicio</b></a>
+              <a class="nav-link active text-white" aria-current="page"
+                href="{% url 'inicio' %}"><b>Inicio</b></a>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white " href="#"
+                id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <b>Sobre Nosotros</b>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <ul class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink" style="background-color: rgb(182, 235, 182);">
                 <li><a class="dropdown-item" href="#">Historia</a></li>
                 <li><a class="dropdown-item" href="#">Misión y Visión</a></li>
                 <li><a class="dropdown-item" href="#">Principios y Valores</a></li>
@@ -29,10 +39,13 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white " href="#"
+                id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <b>Educación</b>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <ul class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink" style="background-color: rgb(182, 235, 182);">
                 <li><a class="dropdown-item" href="#">Primaria</a></li>
                 <li><a class="dropdown-item" href="#">Secundaria</a></li>
                 <li><a class="dropdown-item" href="#">Media Técnica</a></li>

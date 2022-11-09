@@ -6,23 +6,15 @@ from publicaciones.models import Publicacion
 
 def publicacion(request):
     titulo="Publicacion"
+    publicacion= Publicacion.objects.all()
     context={
         'titulo':titulo,
-        'publicacion':Publicacion
-
+        'publicacion':publicacion
 }
     return render(request,'publicaciones/publicacion.html',context) 
 
-
-def adm_publicacion(request):
-
-    context={
-
-    }
-    return render(request, 'publicaciones/adm-publicacion.html', context)
-
 def publicaciones_crear(request):
-    titulo="publicaciones - Crear"
+    titulo="Publicacion - Crear"
     if request.method == "POST":
         form=PublicacionForm(request.POST)
         if form.is_valid():
@@ -39,7 +31,7 @@ def publicaciones_crear(request):
     return render(request,'publicaciones/publicaciones-crear.html',context) 
 
 def publicaciones_editar(request, pk):
-    titulo="publicaciones - Editar"
+    titulo="Publicaciones - Editar"
     publicacion= Publicacion.objects.get(id=pk)
     if request.method == "POST":
         form= PublicacionForm(request.POST, instance=publicacion)

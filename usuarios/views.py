@@ -54,6 +54,19 @@ def usuarios_editar(request, pk):
     }
     return render(request,'usuarios/usuarios-crear.html',context)
 
+def usuarios_eliminar(request, pk):
+    titulo='Usuarios - Eliminar'
+    usuarios= Usuario.objects.all()
+    Usuario.objects.filter(id=pk).update(
+            estado='0'
+        )
+    return redirect('usuarios')
+
+    context={
+        'usuarios':usuarios,
+        'titulo':titulo,
+    }
+
 def login(request):
     context={
     }

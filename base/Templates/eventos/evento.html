@@ -27,7 +27,7 @@
             <td>{{evento.encagEve}}</td>
             <td>{{evento.duracionEve}}</td>
             <td>{{evento.invitados}}</td>
-            <td><a class="btn btn-success" href="{% url 'eventos-editar' evento.id %}"></a><i class="fa fas-edit"></i></td>
+            <td><a class="btn btn-success" href="{% url 'eventos-editar' evento.id %}"><i class="fas fa-pencil-alt"></i></a></td>
         </tr>
         {% endfor %}
             
