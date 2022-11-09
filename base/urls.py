@@ -19,11 +19,16 @@ from django.urls import path, include
 from django.conf.urls import handler404
 from base.views import error_404, inicio, inicioAdmin
 from usuarios.views import usuarios 
+from django.contrib.auth import  views as auth_views
 
 
 handler404= error_404
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('reset_password/', auth_views.PasswordResetView.as_view(template_name="autenticacion/password-reset.html"), name='password_reset'),
+    path('reset_password_send/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name="autenticacion/password-confirm.html"), name='password_reset_confirm'),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('', inicio, name='inicio'),
     path('adm/', inicioAdmin, name='inicio-admin'),
     path('usuarios/', include('usuarios.urls')),
