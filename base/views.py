@@ -66,3 +66,9 @@ def publicaciones_crear(request):
         'form':form
     }
     return render(request,'publicaciones/publicaiones-crear.html', context)
+
+def educacion(request):
+    context={    
+    }
+    
+    return render(request,'educacion.html', context)
