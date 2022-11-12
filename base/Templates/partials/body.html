@@ -28,6 +28,8 @@
     <body class="hold-transition layout-fixed">
         <div class="wrapper ">
             <div class="content-wrapper overflow-auto" style="height: 50%;">
+
+                
                 {% include 'partials/header.html' %}
                 <div class="container">
                     {% block contenido %}
@@ -36,10 +38,12 @@
                 </div>
             </div>
         </div>
+
+        
         {% include 'partials/footer.html' %}
         {% include 'partials/js.html' %}
         {% block javascript %}
         {% endblock javascript %}
+    
 
-    </body>
-</html>
+
