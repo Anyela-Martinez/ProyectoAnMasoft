@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Google Font: Source Sans Pro -->
         {% block stylesheet %}
-
+        
         {% endblock stylesheet %}
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -23,6 +23,7 @@
             href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Toastr -->
         <link rel="stylesheet" href="{% static 'toastr/toastr.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/tarjetas.css' %}">
         <title>Institución Educativa Técnico Ambiental Fernández Guerra</title>
     </head>
     <body class="hold-transition layout-fixed">
@@ -39,7 +40,7 @@
             </div>
         </div>
 
-        
+       
         {% include 'partials/footer.html' %}
         {% include 'partials/js.html' %}
         {% block javascript %}
