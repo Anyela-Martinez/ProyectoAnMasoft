@@ -1,18 +1,4 @@
 
-*{
-    margin: 450;
-    padding: 450;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-}
-
-body{
-    background: #000000;
-}
-
-.navbar{
-    background: #000000;
-}
 
 .container__cards{
     max-width: 1200px;
