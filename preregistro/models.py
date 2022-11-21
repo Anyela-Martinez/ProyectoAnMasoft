@@ -54,4 +54,9 @@ class Preregistro(models.Model):
     correoAcu=models.CharField(max_length=40, verbose_name="Correo Electrónico del Acudiente")
 
     colProce=models.CharField(max_length=60, verbose_name="Colegio de Porecedencia") 
+    
+    class Estado(models.TextChoices):
+        ACTIVO='1', _('Activo')
+        INACTIVO='0', _('Inactivo')
+    Estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
 

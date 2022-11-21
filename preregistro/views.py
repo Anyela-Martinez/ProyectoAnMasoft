@@ -15,13 +15,6 @@ def preregistro(request):
     return render(request,'preregistro/preregistro.html',context) 
 
 
-def adm_preregistro(request):
-
-    context={
-
-    }
-    return render(request, 'preregistro/adm-preregistro.html', context)
-
 def preregistro_crear(request):
     titulo="Preregistro-Crear"
     if request.method == "POST":
@@ -56,3 +49,16 @@ def preregistro_editar(request, pk):
         'form':form
     }
     return render(request,'preregistro/preregistro-crear.html',context) 
+
+def preregistro_eliminar(request, pk):
+    titulo= "Preregistro - Eliminar"
+    preregistro= Preregistro.objects.all()
+    Preregistro.objects.filter(id=pk).update(
+            Estado='0'
+        )
+    return redirect('preregistro')
+    
+    context={
+        'preregistro':preregistro,
+        'titulo':titulo,
+    }

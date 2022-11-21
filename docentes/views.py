@@ -56,3 +56,16 @@ def docentes_editar(request, pk):
         'form':form
     }
     return render(request,'docentes/docentes-crear.html',context) 
+
+def docentes_eliminar(request, pk):
+    titulo='Docentes - Eliminar'
+    docentes= Docente.objects.all()
+    Docente.objects.filter(id=pk).update(
+            Estado='0'
+        )
+    return redirect('docente')
+    
+    context={
+        'docentes':docentes,
+        'titulo':titulo,
+    }

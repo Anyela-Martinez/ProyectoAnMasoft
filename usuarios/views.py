@@ -58,10 +58,10 @@ def usuarios_eliminar(request, pk):
     titulo='Usuarios - Eliminar'
     usuarios= Usuario.objects.all()
     Usuario.objects.filter(id=pk).update(
-            estado='0'
+            Estado='0'
         )
     return redirect('usuarios')
-
+    
     context={
         'usuarios':usuarios,
         'titulo':titulo,

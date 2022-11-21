@@ -36,3 +36,5 @@ def adm_curso(request):
     }
     return render(request, 'curso/adm-curso.html', context)
 
+
+

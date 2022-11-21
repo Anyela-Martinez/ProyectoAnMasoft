@@ -20,12 +20,15 @@
       <th scope="col">Teléfono del Acudiente</th>
       <th scope="col">Correo Electrónico del Acudiente</th>
       <th scope="col">Colegio de procedencia</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
     </tr>
     </thead>
     <tbody>
         
     {% for preregistro in preregistro %}
     <tr>
+        {% if preregistro.Estado == '1' %}
         <td>{{preregistro.TipoDoc}}</td>
         <td>{{preregistro.numDoc}}</td>
         <td>{{preregistro.nombres}}</td>
@@ -41,7 +44,12 @@
         <td>{{preregistro.telefonoAcu}}</td>
         <td>{{preregistro.correoAcu}}</td>
         <td>{{preregistro.colProce}}</td>
-        <td><a class="btn btn-success" href="{% url 'preregistro-editar' preregistro.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+        <td>{{preregistro.Estado}}</td>
+        <td>
+            <a class="btn btn-success" href="{% url 'preregistro-editar' preregistro.id %}"><i class="fas fa-pencil-alt"></i></a>
+            <a class="btn btn-danger" href="{% url 'preregistro-eliminar' preregistro.id %}"><i class="fas fa-trash-alt"></i></a>
+        </td>
+        {% endif %}
     </tr>
         {% endfor %}
             

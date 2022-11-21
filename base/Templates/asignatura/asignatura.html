@@ -15,9 +15,14 @@
 
     {% for asignatura in asignatura %}
     <tr>
+      {% if asignatura.Estado == '1' %}
       <td>{{asignatura.usuario}}</td>
       <td>{{asignatura.nombreAsig}}</td>
-      <td><a class="btn btn-success" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+      <td>
+        <a class="btn btn-success" href="{% url 'asignatura-editar' asignatura.id %}"><i class="fas fa-pencil-alt"></i></a>
+        <a class="btn btn-danger" href="{% url 'asignatura-eliminar' asignatura.id %}"><i class="fas fa-trash-alt"></i></a>
+      </td>
+      {% endif %}
     </tr>
     {% endfor %}
 

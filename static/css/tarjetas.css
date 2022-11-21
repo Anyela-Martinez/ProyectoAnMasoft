@@ -1,19 +1,4 @@
 
-*{
-    margin: 450;
-    padding: 450;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-}
-
-body{
-    background: #000000;
-}
-
-.navbar{
-    background: #000000;
-}
-
 .container__cards{
     max-width: 1200px;
     margin: auto;
@@ -47,7 +32,7 @@ body{
     position: relative;
     top: 40px;
     z-index: 1;
-    filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+    filter: drop-shadow(5px 5px 4px);
     transition: all 400ms;
 }
 

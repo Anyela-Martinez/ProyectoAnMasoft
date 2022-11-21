@@ -31,7 +31,7 @@ def publicaciones_crear(request):
     return render(request,'publicaciones/publicaciones-crear.html',context) 
 
 def publicaciones_editar(request, pk):
-    titulo="Publicaciones - Editar"
+    titulo="Publicacion - Editar"
     publicacion= Publicacion.objects.get(id=pk)
     if request.method == "POST":
         form= PublicacionForm(request.POST, instance=publicacion)
@@ -47,3 +47,16 @@ def publicaciones_editar(request, pk):
         'form':form
     }
     return render(request,'publicaciones/publicaciones-crear.html',context) 
+
+def publicaciones_eliminar(request, pk):
+    titulo= "Publicacion - Eliminar"
+    publicacion= Publicacion.objects.all()
+    Publicacion.objects.filter(id=pk).update(
+            Estado='0'
+        )
+    return redirect('publicacion')
+    
+    context={
+        'publicacion':publicacion,
+        'titulo':titulo,
+    }
