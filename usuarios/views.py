@@ -77,10 +77,10 @@ def administradores(request):
     }
     return render(request, 'usuarios/administradores.html', context)
 
-def administrar(request):
-    context={
+def modulos(request):
+    context={   
     }
-    return render(request, 'usuarios/administrar.html', context)
+    return render(request, 'usuarios/modulos.html', context)
 
 
 

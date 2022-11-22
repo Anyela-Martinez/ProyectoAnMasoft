@@ -30,7 +30,33 @@ def grado_crear(request):
 }
     return render(request,'grado/grado-crear.html',context) 
 
-def adm_grado(request):
+def grado_editar(request, pk):
+    titulo="Grados - Editar"
+    grado= Grado.objects.get(id=pk)
+    if request.method == "POST":
+        form= GradoForm(request.POST, instance=grado)
+        if form.is_valid():
+            form.save()
+            return redirect('grado')
+        else:
+            print("Error al guardar")
+    else:
+        form= GradoForm(instance=grado)
     context={
+        'titulo':titulo,
+        'form':form
     }
-    return render(request,'grado/adm-grado.html', context)
+    return render(request,'grado/grado-crear.html',context) 
+
+def grado_eliminar(request, pk):
+    titulo= "Grado - Eliminar"
+    grado= Grado.objects.all()
+    Grado.objects.filter(id=pk).update(
+            Estado='0'
+        )
+    return redirect('grado')
+    
+    context={
+        'grado':grado,
+        'titulo':titulo,
+    }
