@@ -1,10 +1,10 @@
 from django.urls import path
 
-from eventos.views import adm_evento, evento, eventos_crear, eventos_editar
+from eventos.views import evento, evento_eliminar, evento_crear, evento_editar
 
 urlpatterns = [
     path('',evento,name="evento"),
-    path('adm/',adm_evento,name="adm-evento"),
-    path('crear/',eventos_crear,name="eventos-crear"),
-    path('editar/<int:pk>/',eventos_editar,name="eventos-editar"),
+    path('crear/',evento_crear,name="evento-crear"),
+    path('editar/<int:pk>/',evento_editar,name="evento-editar"),
+    path('eliminar/<int:pk>/',evento_eliminar,name="evento-eliminar"),
 ]

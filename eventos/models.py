@@ -8,8 +8,6 @@ from usuarios.models import Usuario
 
 # Create your models here.
 
-
-
 class Evento(models.Model):
     class TipoEvento(models.TextChoices):
         Cultural='CUL', _('Evento Cultural')
@@ -35,6 +33,11 @@ class Evento(models.Model):
     # Falta imagen
 
     usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE,verbose_name='Usuario')
+    
+    class Estado(models.TextChoices):
+        ACTIVO='1', _('Activo')
+        INACTIVO='0', _('Inactivo')
+    Estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     
    
 

@@ -21,6 +21,7 @@
 
         {% for publicacion in publicacion %}
         <tr>
+            {% if publicacion.Estado == '1' %}
             <td>{{publicacion.TipoPublicacion}}</td>
             <td>{{publicacion.nombrePubli}}</td>
             <td>{{publicacion.descripPublic}}</td>
@@ -30,7 +31,11 @@
             <td>{{publicacion.usuario}}</td>
             <td>{{publicacion.docente}}</td>
             <td>{{publicacion.grado}}</td>
-            <td><a class="btn btn-success" href="{% url 'publicaciones-editar' publicacion.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+            <td>
+                <a class="btn btn-success" href="{% url 'publicaciones-editar' publicacion.id %}"><i class="fas fa-pencil-alt"></i></a>
+                <a class="btn btn-danger" href="{% url 'publicaciones-eliminar' publicacion.id %}"><i class="fas fa-trash-alt"></i></a>
+            </td>
+            {% endif %}
         </tr>
         {% endfor %}
 

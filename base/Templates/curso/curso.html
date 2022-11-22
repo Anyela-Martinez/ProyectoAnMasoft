@@ -19,13 +19,18 @@
 
     {% for curso in curso %}
     <tr>
+      {% if curso.Estado == '1' %}
       <td>{{curso.usuario}}</td>
       <td>{{curso.grado}}</td>
       <td>{{curso.nombreCurso}}</td>
       <td>{{curso.numCurso}}</td>
       <td>{{curso.GradoPerte}}</td>
       <td>{{curso.Estado}}</td>
-      <td><a class="btn btn-success" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+      <td>
+        <a class="btn btn-success" href="{% url 'curso-editar' curso.id %}"><i class="fas fa-pencil-alt"></i></a>
+        <a class="btn btn-danger" href="{% url 'curso-eliminar' curso.id %}"><i class="fas fa-trash-alt"></i></a>
+      </td>
+      {% endif %}
     </tr>
     {% endfor %}
 
