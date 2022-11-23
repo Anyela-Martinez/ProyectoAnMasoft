@@ -1,6 +1,6 @@
 from django.urls import path
 
-from usuarios.views import usuarios, usuarios_crear, login, administradores, modulos, adm_usuario, usuarios_editar, usuarios_eliminar
+from usuarios.views import usuarios, usuarios_crear, login, administradores, usuarios_editar, usuarios_eliminar
 
 urlpatterns = [
     path('',usuarios,name="usuarios"),
@@ -9,6 +9,4 @@ urlpatterns = [
     path('eliminar/<int:pk>/',usuarios_eliminar,name="usuarios-eliminar"),
     path('login/',login,name="login"),
     path('administradores/',administradores,name="administradores"),
-    path('modulos/',modulos,name="modulos"),
-    path('adm/',adm_usuario,name="adm-usuario"),
 ]

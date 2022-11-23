@@ -14,11 +14,6 @@ def usuarios(request):
 }
     return render(request,'usuarios/usuarios.html',context) 
 
-def adm_usuario(request):
-    context={
-    }
-    return render(request, 'usuarios/adm-usuario.html', context)
-
 def usuarios_crear(request):
     titulo="Usuarios - Crear"
     if request.method == "POST":
@@ -76,11 +71,6 @@ def administradores(request):
     context={
     }
     return render(request, 'usuarios/administradores.html', context)
-
-def modulos(request):
-    context={   
-    }
-    return render(request, 'usuarios/modulos.html', context)
 
 
 

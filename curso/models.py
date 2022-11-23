@@ -4,9 +4,6 @@ from grado.models import Grado
 
 from usuarios.models import Usuario
 
-
-
-
 # Create your models here.
 class Curso(models.Model):
         usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE,verbose_name='Usuario')
