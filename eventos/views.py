@@ -20,7 +20,7 @@ def evento_crear(request):
         form=EventoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('eventos')
+            return redirect('evento')
         else:
             print("Error")
     else:

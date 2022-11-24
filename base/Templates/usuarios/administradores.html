@@ -68,9 +68,9 @@
             </div>
         </div>
     </div>
-    <div class="col align-self-center m-3">
+    <div class="col-4 align-self-center m-0">
         <div class="d-grid gap-2 m-0">
-            <div class="d-grid gap-4 col-8 mx-auto">
+            <div class="d-grid gap-2 col mx-auto">
                 <div class="card" style="width: 18rem;">
                     <img src="{% static 'img/usuario.png' %}"
                         class="card-img-top" alt="...">
@@ -79,8 +79,10 @@
                             Docente del área de matemática</p>
                     </div>
                 </div>
-                <a href="{% url 'modulos' %}" class="btn btn-success"
-                    type="submit">Módulos</a>
+                <div class="d-grid gap-2 col">
+                    <a href="{% url 'modulos' %}" class="btn btn-success"
+                        type="submit">Módulos</a>
+                </div>
             </div>
         </div>
 <<<<<<< HEAD

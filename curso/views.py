@@ -14,7 +14,7 @@ def curso(request):
     return render(request,'curso/curso.html',context) 
 
 def curso_crear(request):
-    titulo="Curso - Crear"
+    titulo="Cursos - Crear"
     if request.method == "POST":
         form=CursoForm(request.POST)
         if form.is_valid():
