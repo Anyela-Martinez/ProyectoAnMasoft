@@ -72,5 +72,13 @@ def administradores(request):
     }
     return render(request, 'usuarios/administradores.html', context)
 
+<<<<<<< HEAD
+def modulos(request):
+    context={   
+    }
+    return render(request, 'usuarios/modulos.html', context)
+
+=======
+>>>>>>> bb2dcd33c83ce5b7e683e7b9bc810ababc25e95e
 
 

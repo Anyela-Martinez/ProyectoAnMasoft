@@ -46,10 +46,15 @@
                 <td>{{cursos.GradoPerte}}</td>
                 <td>{{cursos.Estado}}</td>
                 <td>
+<<<<<<< HEAD
+        <a class="btn btn-success" href="{% url 'curso-editar' curso.id %}"><i class="fas fa-pencil-alt"></i></a>
+        <a class="btn btn-danger" href="{% url 'curso-eliminar' curso.id %}"><i class="fas fa-trash-alt"></i></a>
+=======
                   <a class="btn btn-success" href="#"><i
                       class="fas fa-pencil-alt"></i></a>
                   <a class="btn btn-danger" href="#"><i
                       class="fas fa-trash-alt"></i></a>
+>>>>>>> bb2dcd33c83ce5b7e683e7b9bc810ababc25e95e
                 </td>
               </tr>
               {% endfor %}
