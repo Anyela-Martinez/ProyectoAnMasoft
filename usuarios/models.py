@@ -50,4 +50,6 @@ class Usuario(models.Model):
         INACTIVO='0', _('Inactivo')
     Estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
 
+    def __str__(self)->str:
+        return "%s %s" %(self.nombres, self.apellidos) 
     # falto imagen
