@@ -1,6 +1,5 @@
 {% extends 'partials/body.html' %}
 
-
 {% block contenido %}
 <table class="table">
   <thead>
@@ -16,8 +15,7 @@
     </tr>
   </thead>
   <tbody>
-
-    {% for curso in curso %}
+    {% for curso in cursos %}
     <tr>
       {% if curso.Estado == '1' %}
       <td>{{curso.usuario}}</td>
@@ -27,13 +25,19 @@
       <td>{{curso.GradoPerte}}</td>
       <td>{{curso.Estado}}</td>
       <td>
+<<<<<<< HEAD
         <a class="btn btn-success" href="{% url 'curso-editar' curso.id %}"><i class="fas fa-pencil-alt"></i></a>
         <a class="btn btn-danger" href="{% url 'curso-eliminar' curso.id %}"><i class="fas fa-trash-alt"></i></a>
+=======
+        <a class="btn btn-success" href="{% url 'curso-editar' curso.id %}"><i
+            class="fas fa-pencil-alt"></i></a>
+        <a class="btn btn-danger" href="{% url 'curso-eliminar' curso.id %}"><i
+            class="fas fa-trash-alt"></i></a>
+>>>>>>> bb2dcd33c83ce5b7e683e7b9bc810ababc25e95e
       </td>
       {% endif %}
     </tr>
     {% endfor %}
-
   </tbody>
 </table>
 {% endblock contenido %}
