@@ -65,4 +65,7 @@ class Estudiante(models.Model):
     
     curso=models.ForeignKey(Curso, on_delete=models.CASCADE,verbose_name='Curso')
 
+    def __str__(self)->str:
+        return "%s %s" %(self.nombres, self.apellidos) 
+
     

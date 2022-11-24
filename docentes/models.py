@@ -40,3 +40,6 @@ class Docente(models.Model):
         Jornada=models.CharField(max_length=10,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
 
         usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE,verbose_name='Usuario')
+
+        def __str__(self)->str:
+           return "%s %s" %(self.nombres, self.apellidos) 

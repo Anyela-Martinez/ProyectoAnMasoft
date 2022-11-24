@@ -87,30 +87,108 @@
         </div>
     </div>
 
-
-    <!-- Acerca de nosotros -->
-    <section class="acerca-de">
-        <div class="info-container">
-            <h1>Institución Educativa Técnico Ambiental Fernández Guerra</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                molestie in risus eget iaculis. Pellentesque habitant morbi
-                tristique senectus et netus et malesuada fames ac turpis
-                egestas. Sed at ultricies lacus. Sed ut ornare mi, ac blandit
-                nibh. Nulla sollicitudin lorem consequat, porta est ut,
-                scelerisque risus. Morbi iaculis a sem quis iaculis. Sed
-                facilisis turpis placerat, aliquam augue in, aliquet lectus.</p>
-            <p>Aliquam erat volutpat. Aliquam pellentesque velit ut neque
-                consequat, id accumsan est cursus. Ut ut leo at dolor molestie
-                porta. Vestibulum ante ipsum primis in faucibus orci luctus et
-                ultrices posuere cubilia Curae; Integer auctor gravida quam et
-                faucibus. Vivamus vel porttitor leo, ac ornare odio. Praesent
-                finibus mi urna, sed vehicula dolor bibendum vel.</p>
+    <section class=" contenedor" id="Servicio">
+        <h2 class="subtitulo">Institución Educativa Técnico Ambiental Fernández Guerra</h2>
+        <div class="contenedor-servicio">
+            <img src="{% static 'img/zyro-image.png' %}" alt="" >
+            <div class="checklist-servicio">
+                <div class="service">
+                    <h3 class="n-service">
+                        <span class="number">1</span>Historia
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quisquam, earum dolorum sequi ex facilis sint perferendis delectus molestiae asperiores aut harum provident a, vero ducimus ullam, velit voluptate. Ad nostrum ipsum modi, unde natus aspernatur quasi eum doloremque aut commodi ratione neque in voluptatem quas deserunt voluptas nisi nesciunt facilis, perspiciatis nobis consectetur alias cupiditate mollitia! Officiis maxime dignissimos hic, eligendi dicta neque rerum eum delectus minus veritatis adipisci quae fugiat architecto commodi asperiores consectetur pariatur! Magni vero, amet possimus sequi dolore adipisci. Cum reprehenderit ipsam eaque quaerat beatae dicta nobis eius eos enim architecto inventore non, ipsa quos.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
-</main>
-{% endblock contenido %}
-
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-{% bootstrap_messages %}
+    <h2 class="subtitulo"><b><span class="number">2</span> Misión y Visión</b></h2>
+    <div class="container__cards">
+        <div class="card">
+            <div class="cover">
+                <img src="{% static 'img/Photo.jpg' %}" alt="" />
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Misión</h2>
+                <p>
+                    Ayudar a compañías pequeñas a entender y aprovechar las nuevas tecnologías,
+                    que hará que sus empresas entren en el marketing digital y trabajen desde
+                    cualquier parte del mundo.
+                </p>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="cover">
+                <img src="{% static 'img/Photo.jpg' %}" alt="" />
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Visión</h2>
+                <p>
+                    Ser en los próximos 5 años una de las mas grandes compañías, en el área
+                    latina, que reduzca la brecha entre la tecnología y las pequeñas y medianas
+                    empresas
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <h2 class="subtitulo"><b><span class="number">3</span> Principios y Valores</b></h2>
+    <section class="knowledge">
+        <div class="knowledge__container container">
+            <div class="knowledege__texts">
+                <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+                <p class="knowledge__paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi,
+                    aliquam nemo in facere suscipit at 151561delectus unde labore ad officia iste accusantium eaque
+                    aperiam laborum est voluptate totam? Modi, obcaecati?</p>
+               
+            </div>
+    
+            <figure class="knowledge__picture">
+                <img src="{% static 'img/Banda.jpg' %}" class="knowledge__img">
+            </figure>
+        </div>
+    </section>
+    
+    
+    
+    <h2 class="subtitulo"><b><span class="number">4</span>Directivos</b></h2>
+    <div class="container__cards">
+        <div class="card">
+            <div class="cover">
+                <img src="{% static 'img/usuario.png' %}" alt="">
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Carolina Herrera</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="cover">
+                <img src="{% static 'img/usuario.png' %}" alt="">
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Elon Musk</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="cover">
+                <img src="{% static 'img/usuario.png' %}" alt="">
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Aya Nakamura</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
+            </div>
+        </div>
+    
+    {% endblock contenido %}
+    

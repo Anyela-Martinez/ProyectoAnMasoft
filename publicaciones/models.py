@@ -39,3 +39,5 @@ class Publicacion(models.Model):
 
     grado=models.ForeignKey(Grado, on_delete=models.CASCADE,verbose_name='Grado')
 
+    def __str__(self)->str:
+        return "%s %s" %(self.TipoPublicacion, self.nombrePubli) 
