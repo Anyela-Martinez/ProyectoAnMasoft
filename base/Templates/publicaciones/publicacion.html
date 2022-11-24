@@ -1,45 +1,108 @@
 {% extends 'partials/body.html' %}
+{% load static %}
 
+{% block stylesheet %}
+<!-- DataTables -->
+<!-- <link rel="stylesheet" href="{% static 'datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="{% static 'datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="{% static 'datatables-buttons/css/buttons.bootstrap4.min.css"> -->
+{% endblock stylesheet %}
 
 {% block contenido %}
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Tipo de publicación</th>
-            <th scope="col">Nombre de la publicación</th>
-            <th scope="col">Descripcion de la publicación</th>
-            <th scope="col">link de la publicación</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Jornada</th>
-            <th scope="col">Usuario</th>
-            <th scope="col">Docente</th>
-            <th scope="col">Grado</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="m-3 border">
+    <div class="card-header">
+        <h3 class="card-title">Tabla de Usuarios</h3>
+    </div>
 
-        {% for publicacion in publicacion %}
-        <tr>
-            {% if publicacion.Estado == '1' %}
-            <td>{{publicacion.TipoPublicacion}}</td>
-            <td>{{publicacion.nombrePubli}}</td>
-            <td>{{publicacion.descripPublic}}</td>
-            <td>{{publicacion.linkPubli}}</td>
-            <td>{{publicacion.Estado}}</td>
-            <td>{{publicacion.Jornada}}</td>
-            <td>{{publicacion.usuario}}</td>
-            <td>{{publicacion.docente}}</td>
-            <td>{{publicacion.grado}}</td>
-            <td>
-                <a class="btn btn-success" href="{% url 'publicaciones-editar' publicacion.id %}"><i class="fas fa-pencil-alt"></i></a>
-                <a class="btn btn-danger" href="{% url 'publicaciones-eliminar' publicacion.id %}"><i class="fas fa-trash-alt"></i></a>
-            </td>
-            {% endif %}
-        </tr>
-        {% endfor %}
+    <div class="card-body">
+        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="example1" class="table table-bordered
+                        table-striped dataTable dtr-inline"
+                        aria-describedby="example1_info">
+                        <thead>
+                            <tr>
+                                <th scope="col">Tipo de publicación</th>
+                                <th scope="col">Nombre de la publicación</th>
+                                <th scope="col">Descripcion de la publicación</th>
+                                <th scope="col">link de la publicación</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Jornada</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Docente</th>
+                                <th scope="col">Grado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
+                            {% for publicacion in publicacion %}
 
-    </tbody>
-</table>
+                            <tr class="odd">
+
+                                <td class="sorting_1 dtr-control" tabindex="0">{{publicacion.TipoPublicacion}}</td>
+                                <td>{{publicacion.nombrePubli}}</td>
+                                <td>{{publicacion.descripPublic}}</td>
+                                <td>{{publicacion.linkPubli}}</td>
+                                <td>{{publicacion.Estado}}</td>
+                                <td>{{publicacion.Jornada}}</td>
+                                <td>{{publicacion.usuario}}</td>
+                                <td>{{publicacion.docente}}</td>
+                                <td>{{publicacion.grado}}</td>
+                                <td>
+                                    <a class="btn btn-success" href="{% url
+                                        'publicaciones-editar' publicacion.id
+                                        %}"><i class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-danger" href="{% url
+                                        'publicaciones-eliminar' publicacion.id
+                                        %}"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 {% endblock contenido %}
+
+{% block javascript %}
+<!-- DataTables  & Plugins -->
+<script src="{% static 'datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'datatables-responsive/js/dataTables.responsive.min.js'
+    %}"></script>
+<script src="{% static 'datatables-responsive/js/responsive.bootstrap4.min.js'
+    %}"></script>
+<script src="{% static 'datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'jszip/jszip.min.js' %}"></script>
+<script src="{% static 'pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+<!-- Page specific script -->
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+{% endblock javascript %}

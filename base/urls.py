@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
-from base.views import error_404, inicio, inicioAdmin, educacion, modulos
+from base.views import error_404, inicio, inicioAdmin, educacion, modulos, noticias
 from usuarios.views import usuarios 
 from django.contrib.auth import  views as auth_views
 
@@ -32,6 +32,7 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('adm/', inicioAdmin, name='inicio-admin'),
     path('modulos/', modulos, name='modulos'),
+    path('noticias/', noticias, name='noticias'),
     path('usuarios/', include('usuarios.urls')),
     path('asignatura/', include('asignatura.urls')),
     path('curso/', include('curso.urls')),

@@ -27,3 +27,9 @@ def educacion(request):
     }
     
     return render(request,'educacion.html', context)
+
+def noticias(request):
+    context={    
+    }
+    
+    return render(request,'noticias.html', context)

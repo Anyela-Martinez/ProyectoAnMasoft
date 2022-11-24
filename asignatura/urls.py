@@ -1,9 +1,10 @@
 from django.urls import path
 
-from asignatura.views import adm_asignatura, asignatura, asignatura_crear
+from asignatura.views import asignatura, asignaturas_crear, asignatura_editar, asignatura_eliminar
 
 urlpatterns = [
     path('',asignatura,name="asignatura"),
-    path('adm/',adm_asignatura,name="adm-asignatura"),
-    path('crear/',asignatura_crear,name="asignatura-crear"),
+    path('crear/',asignaturas_crear,name="asignaturas-crear"),
+    path('editar/',asignatura_editar,name="asignaturas-editar"),
+    path('eliminar/',asignatura_eliminar,name="asignaturas-eliminar"),
 ]
