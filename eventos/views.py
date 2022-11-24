@@ -20,7 +20,7 @@ def evento_crear(request):
         form=EventoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('evento')
+            return redirect('evento', 'noticias')
         else:
             print("Error")
     else:
@@ -28,8 +28,13 @@ def evento_crear(request):
     context={
         'titulo':titulo,
         'form':form
+    
 }
+    
+    
     return render(request,'eventos/eventos-crear.html',context) 
+
+
 
 def evento_editar(request, pk):
     titulo="Evento - Editar"

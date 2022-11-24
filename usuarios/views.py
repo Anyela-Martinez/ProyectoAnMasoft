@@ -73,10 +73,7 @@ def administradores(request):
     return render(request, 'usuarios/administradores.html', context)
 
 
-def modulos(request):
-    context={   
-    }
-    return render(request, 'usuarios/modulos.html', context)
+
 
 
 
