@@ -11,7 +11,7 @@
 {% block contenido %}
 <div class="m-3 border">
   <div class="card-header">
-    <h3 class="card-title">Tabla de Usuarios</h3>
+    <h3 class="card-title">Tabla de Asignaturas</h3>
   </div>
 
   <div class="card-body">
@@ -32,18 +32,17 @@
             <tbody>
 
               {% for asignaturas in asignatura %}
-
+              {% if asignaturas.Estado != '0' %}
               <tr class="odd">
 
                 <td class="sorting_1 dtr-control" tabindex="0">{{asignaturas.usuario}}</td>
                 <td>{{asignaturas.nombreAsig}}</td>
                 <td>
-                  <a class="btn btn-success" href="{% url 'asignatura-editar'
-                    asignatura.id %}"><i class="fas fa-pencil-alt"></i></a>
-                  <a class="btn btn-danger" href="{% url 'asignatura-eliminar'
-                    asignatura.id %}"><i class="fas fa-trash-alt"></i></a>
+                  <a class="btn btn-success" href="{% url 'asignatura-editar' asignatura.id %}"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger" href="{% url 'asignatura-eliminar' asignatura.id %}"><i class="fas fa-trash-alt"></i></a>
                 </td>
               </tr>
+              {% endif %}
               {% endfor %}
 
             </tbody>

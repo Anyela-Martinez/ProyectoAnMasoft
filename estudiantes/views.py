@@ -1,16 +1,16 @@
 from django.shortcuts import redirect, render
 from estudiantes.forms import EstudianteForm
-
 from estudiantes.models import Estudiante
+from django.contrib import messages
 
 # Create your views her
 
-def estudiante(request):
-    estudiante= Estudiante.objects.all()
-    titulo="Estudiante"
+def estudiantes(request):
+    titulo="Estudiantes"
+    estudiantes= Estudiante.objects.all()
     context={
         'titulo':titulo,
-        'estudiante':estudiante
+        'estudiantes':estudiantes
 
 }
     return render(request,'estudiantes/estudiante.html',context) 
@@ -21,7 +21,7 @@ def estudiantes_crear(request):
         form=EstudianteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('estudiante')
+            return redirect('estudiantes')
         else:
             print("Error")
     else:
@@ -39,7 +39,7 @@ def estudiantes_editar(request, pk):
         form= EstudianteForm(request.POST, instance=estudiante)
         if form.is_valid():
             form.save()
-            return redirect('estudiante')
+            return redirect('estudiantes')
         else:
             print("Error al guardar")
     else:
@@ -56,7 +56,7 @@ def estudiantes_eliminar(request, pk):
     Estudiante.objects.filter(id=pk).update(
             Estado='0'
         )
-    return redirect('estudiante')
+    return redirect('estudiantes')
     
     context={
         'estudiante':estudiante,

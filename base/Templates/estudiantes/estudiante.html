@@ -47,8 +47,8 @@
             </thead>
             <tbody>
 
-              {% for estudiante in estudiante %}
-
+              {% for estudiante in estudiantes %}
+              {% if estudiante.Estado != '0' %}
               <tr class="odd">
 
                 <td class="sorting_1 dtr-control" tabindex="0">{{estudiante.TipoDoc}}</td>
@@ -74,6 +74,7 @@
                   <a class="btn btn-danger" href="{% url 'estudiantes-eliminar' estudiante.id %}"><i class="fas fa-trash-alt"></i></a>
                 </td>
               </tr>
+              {% endif %}
               {% endfor %}
 
             </tbody>

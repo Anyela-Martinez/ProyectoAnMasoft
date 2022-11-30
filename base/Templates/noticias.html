@@ -2,12 +2,166 @@
 {% load static %}
 
 {% block contenido %}
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Título de la tarjeta</h5>
-      <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-      <a href="#" class="btn btn-primary">Ir a algún lugar</a>
+<div>
+  <div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            {% for evento in eventos %}
+            {% if evento.Estado != '0' %}
+            <tr class="odd">
+                <td class="sorting_1 dtr-control" tabindex="0">{{evento.TipoEvento}}</td>
+                <td>{{evento.nombreEve}}</td>
+                <td>{{evento.fechaEve}}</td>
+                <td>{{evento.horaEve}}</td>
+                <td>{{evento.lugarEve}}</td>
+                <td>{{evento.encagEve}}</td>
+                <td>{{evento.duracionEve}}</td>
+                <td>{{evento.invitados}}</td>
+                <td>
+                    <a class="btn btn-success" href="{% url 'evento-editar' evento.id %}"><i
+                            class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger" href="{% url 'evento-eliminar' evento.id %}"><i
+                            class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+              Leer Noticia
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1"
+              aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal
+                      title</h1>
+                    <button type="button" class="btn-close"
+                      data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, libero illum assumenda hic blanditiis perspiciatis nesciunt eaque quaerat odio eos laboriosam voluptates modi provident deleniti inventore dolore vitae temporibus corporis.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus quis facere nobis, mollitia suscipit facilis provident harum cum repellendus distinctio repudiandae maxime at magnam neque beatae vero vel voluptas.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere delectus molestiae dicta maxime, voluptate totam. Officiis libero aliquid fuga delectus placeat accusantium voluptatum perspiciatis at? Doloribus perspiciatis iure aspernatur vero.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia minus reprehenderit fugiat consectetur ratione fugit, minima animi perspiciatis iure facere amet sequi necessitatibus nobis dolor similique! Vitae odit ut adipisci.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, libero illum assumenda hic blanditiis perspiciatis nesciunt eaque quaerat odio eos laboriosam voluptates modi provident deleniti inventore dolore vitae temporibus corporis.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus quis facere nobis, mollitia suscipit facilis provident harum cum repellendus distinctio repudiandae maxime at magnam neque beatae vero vel voluptas.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere delectus molestiae dicta maxime, voluptate totam. Officiis libero aliquid fuga delectus placeat accusantium voluptatum perspiciatis at? Doloribus perspiciatis iure aspernatur vero.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia minus reprehenderit fugiat consectetur ratione fugit, minima animi perspiciatis iure facere amet sequi necessitatibus nobis dolor similique! Vitae odit ut adipisci.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                      data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-end">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card
+              title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 {% endblock contenido %}

@@ -11,7 +11,7 @@
 {% block contenido %}
 <div class="m-3 border">
     <div class="card-header">
-        <h3 class="card-title">Tabla de Usuarios</h3>
+        <h3 class="card-title">Tabla de Eventos</h3>
     </div>
 
     <div class="card-body">
@@ -37,14 +37,13 @@
                         <tbody>
 
                             {% for evento in eventos %}
-
+                            {% if evento.Estado != '0' %}
                             <tr class="odd">
-                                
                                 <td class="sorting_1 dtr-control" tabindex="0">{{evento.TipoEvento}}</td>
-                                <td>{{evento.horaEve}}</td>
-                                <td>{{evento.fechaEve}}</td>
-                                <td>{{evento.lugarEve}}</td>
                                 <td>{{evento.nombreEve}}</td>
+                                <td>{{evento.fechaEve}}</td>
+                                <td>{{evento.horaEve}}</td>
+                                <td>{{evento.lugarEve}}</td>
                                 <td>{{evento.encagEve}}</td>
                                 <td>{{evento.duracionEve}}</td>
                                 <td>{{evento.invitados}}</td>
@@ -55,6 +54,7 @@
                                             class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
+                            {% endif %}
                             {% endfor %}
 
                         </tbody>

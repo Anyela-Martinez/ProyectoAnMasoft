@@ -62,10 +62,6 @@ def usuarios_eliminar(request, pk):
         'titulo':titulo,
     }
 
-def login(request):
-    context={
-    }
-    return render(request, 'usuarios/login.html', context)
 
 def administradores(request):
     context={

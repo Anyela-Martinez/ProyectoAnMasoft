@@ -32,16 +32,14 @@
                 <th scope="col">Correo Electrónico</th>
                 <th scope="col">Género</th>
                 <th scope="col">Rol</th>
-                <th scope="col">Estado</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
 
               {% for usuario in usuarios %}
-
+              {% if usuario.Estado != '0' %}
               <tr class="odd">
-                
                 <td class="sorting_1 dtr-control" tabindex="0">{{usuario.TipoDoc}}</td>
                 <td>{{usuario.numDoc}}</td>
                 <td>{{usuario.nombres}}</td>
@@ -52,13 +50,13 @@
                 <td>{{usuario.correo}}</td>
                 <td>{{usuario.Genero}}</td>
                 <td>{{usuario.Rol}}</td>
-                <td>{{usuario.Estado}}</td>
                 <td>
                   <a class="btn btn-success" href="{% url 'usuarios-editar' usuario.id %}"><i class="fas fa-pencil-alt"></i></a>
                   <a class="btn btn-danger" href="{% url 'usuarios-eliminar' usuario.id %}"><i class="fas fa-trash-alt"></i></a>
                   <a class="btn btn-warning"><i class="fas fa-file-download"></i></a>
                 </td>
               </tr>
+              {% endif %}
               {% endfor %}
             
             </tbody>
@@ -74,6 +72,7 @@
 {% block javascript %}
 <!-- DataTables  & Plugins -->
 <script src="{% static 'datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'datatables/datatables.spanish.json' %}"></script>
 <script src="{% static 'datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
 <script src="{% static 'datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
 <script src="{% static 'datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>

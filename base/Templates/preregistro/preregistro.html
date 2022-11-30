@@ -32,8 +32,7 @@
                                 <th scope="col">Dirección</th>
                                 <th scope="col">Correo Electrónico</th>
                                 <th scope="col">Tipo de Documento del Acudiente</th>
-                                <th scope="col">Número de Documento del
-                                    Acudiente</th>
+                                <th scope="col">Número de Documento del Acudiente</th>
                                 <th scope="col">Nombres del Acudiente</th>
                                 <th scope="col">Apellidos del Acudiente</th>
                                 <th scope="col">Teléfono del Acudiente</th>
@@ -46,7 +45,7 @@
                         <tbody>
 
                             {% for preregistro in preregistro %}
-
+                            {% if preregistro.Estado != '0' %}
                             <tr class="odd">
 
                                 <td class="sorting_1 dtr-control" tabindex="0">{{preregistro.TipoDoc}}</td>
@@ -74,6 +73,7 @@
                                         %}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
+                            {% endif %}
                             {% endfor %}
 
                         </tbody>

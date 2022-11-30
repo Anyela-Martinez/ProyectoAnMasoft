@@ -17,8 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
-from base.views import error_404, inicio, inicioAdmin, educacion, modulos, noticias
-from usuarios.views import usuarios 
+from base.views import error_404, inicio, inicioAdmin, educacion, modulos, noticias 
 from django.contrib.auth import  views as auth_views
 
 
@@ -29,7 +28,10 @@ urlpatterns = [
     path('reset_password_send/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name="autenticacion/password-confirm.html"), name='password_reset_confirm'),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path('login/', auth_views.LoginView.as_view(template_name="login.html"), name='login'),
+    path('logout/', auth_views.logout_then_login, name='logout'),
     path('', inicio, name='inicio'),
+    path('accounts/login/', inicio, name='inicio'),
     path('adm/', inicioAdmin, name='inicio-admin'),
     path('modulos/', modulos, name='modulos'),
     path('noticias/', noticias, name='noticias'),
