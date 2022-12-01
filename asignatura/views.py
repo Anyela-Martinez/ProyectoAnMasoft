@@ -34,7 +34,7 @@ def asignaturas_crear(request):
 
 def asignatura_editar(request, pk):
     titulo="Asignaturas - Editar"
-    asignatura= asignatura.objects.get(id=pk)
+    asignatura= Asignatura.objects.get(id=pk)
     if request.method == "POST":
         form= AsignaturaForm(request.POST, instance=asignatura)
         if form.is_valid():

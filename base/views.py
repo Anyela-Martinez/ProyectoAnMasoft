@@ -1,6 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views.defaults import page_not_found
+from eventos.models import Evento
 
 def inicio(request):
     context={    
@@ -29,7 +30,11 @@ def educacion(request):
     return render(request,'educacion.html', context)
 
 def noticias(request):
-    context={    
+    titulo = 'Eventos'
+    eventos= Evento.objects.filter(estado='1')
+    context={  
+        'eventos': eventos,
+        'titulo':titulo
     }
     
     return render(request,'noticias.html', context)

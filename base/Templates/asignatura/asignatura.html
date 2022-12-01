@@ -38,8 +38,8 @@
                 <td class="sorting_1 dtr-control" tabindex="0">{{asignaturas.usuario}}</td>
                 <td>{{asignaturas.nombreAsig}}</td>
                 <td>
-                  <a class="btn btn-success" href="{% url 'asignatura-editar' asignatura.id %}"><i class="fas fa-pencil-alt"></i></a>
-                  <a class="btn btn-danger" href="{% url 'asignatura-eliminar' asignatura.id %}"><i class="fas fa-trash-alt"></i></a>
+                  <a class="btn btn-success" href="{% url 'asignaturas-editar' asignaturas.id %}"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger" href="{% url 'asignaturas-eliminar' asignaturas.id %}"><i class="fas fa-trash-alt"></i></a>
                 </td>
               </tr>
               {% endif %}

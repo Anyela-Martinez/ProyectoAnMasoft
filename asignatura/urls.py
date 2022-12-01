@@ -5,6 +5,6 @@ from asignatura.views import asignatura, asignaturas_crear, asignatura_editar, a
 urlpatterns = [
     path('',asignatura,name="asignatura"),
     path('crear/',asignaturas_crear,name="asignaturas-crear"),
-    path('editar/',asignatura_editar,name="asignaturas-editar"),
-    path('eliminar/',asignatura_eliminar,name="asignaturas-eliminar"),
+    path('editar/<int:pk>/',asignatura_editar,name="asignaturas-editar"),
+    path('eliminar/<int:pk>/',asignatura_eliminar,name="asignaturas-eliminar"),
 ]

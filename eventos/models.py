@@ -18,6 +18,8 @@ class Evento(models.Model):
 
     nombreEve=models.CharField(max_length=60, verbose_name="Nombre del evento")
 
+    descripEve=models.CharField(max_length=100, verbose_name="Descripción del evento")
+
     fechaEve=models.DateField(verbose_name="Fecha del Evento", help_text=u"MM/DD/AAAA")
 
     horaEve=models.TimeField(verbose_name="Hora del Evento", help_text=u"00:00:00")
@@ -37,7 +39,7 @@ class Evento(models.Model):
     class Estado(models.TextChoices):
         ACTIVO='1', _('Activo')
         INACTIVO='0', _('Inactivo')
-    Estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
+    estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
 
     def __str__(self)->str:
         return "%s %s" %(self.TipoEvento, self.nombreEve) 

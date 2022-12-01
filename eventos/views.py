@@ -41,7 +41,7 @@ def evento_editar(request, pk):
         form= EventoForm(request.POST, instance=evento)
         if form.is_valid():
             form.save()
-            return redirect('eventos')
+            return redirect('evento')
         else:
             print("Error al guardar")
     else:
