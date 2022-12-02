@@ -3,7 +3,7 @@
 
 {% block contenido %}
 
-<h1>Educación</h1>
+{% comment %} <h1>Educación</h1>
     <h2>Primaria</h2>
     Preescolar
 En esta etapa, los maestros desenvuelven su labor a partir de los intereses de los niños, delineando proyectos educativos que estimulen la curiosidad y el sentido de investigación de los pequeños.
@@ -29,7 +29,47 @@ El descubrimiento y reconocimiento del niño dentro de su entorno, sumado al pro
     <img src="{% static 'img/prueba.jpg' %}" class="img-circle
       elevation-2" alt="User Image" width="300" height="300"
       class="d-inline-block align-text-top">
-  </a>
+  </a> {% endcomment %}
 
+
+  <section>
+
+    <div class="title-cards1">
+        <h2>Lorem, ipsum.</h2>
+    </div>
+<div class="container-card1">
+    
+<div class="card1">
+    <figure>
+        <img src="{% static 'img/prueba.jpg' %}">
+    </figure>
+    <div class="contenido-card1">
+        <h3>Preescolar</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est possimus, dolore quia optio perspiciatis commodi.</p>
+        
+    </div>
+</div>
+<div class="card1">
+    <figure>
+        <img src="{% static 'img/prueba.jpg' %}">
+    </figure>
+    <div class="contenido-card1">
+        <h3>Primaria</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quas, debitis recusandae a distinctio minima.</p>
+        
+    </div>
+</div>
+<div class="card1">
+    <figure>
+        <img src="{% static 'img/prueba.jpg' %}">
+    </figure>
+    <div class="contenido-card1">
+        <h3>Secundaria</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit nesciunt similique quo animi sapiente tempore.</p>
+        
+    </div>
+</div>
+</div>
+</section>
 
 {% endblock contenido %}
