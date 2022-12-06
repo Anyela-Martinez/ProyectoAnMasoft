@@ -1,7 +1,9 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views.defaults import page_not_found
+from django.views.generic import ListView
 from eventos.models import Evento
+from usuarios.models import Usuario 
 
 def inicio(request):
     context={    
@@ -38,3 +40,9 @@ def noticias(request):
     }
     
     return render(request,'noticias.html', context)
+
+
+def manual(request):
+    context={
+    }
+    return render(request, 'manual.html', context)

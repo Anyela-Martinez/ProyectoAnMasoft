@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
-from base.views import error_404, inicio, inicioAdmin, educacion, modulos, noticias 
+from asignatura import views
+from base.views import error_404, inicio, inicioAdmin, educacion, manual, modulos, noticias 
 from django.contrib.auth import  views as auth_views
 
 
@@ -45,4 +46,5 @@ urlpatterns = [
     path('preregistro/', include('preregistro.urls')),
     path('publicaciones/', include('publicaciones.urls')),
     path('educacion/', educacion, name='educacion'),
+    path('manual/', manual, name='manual'),
 ]
