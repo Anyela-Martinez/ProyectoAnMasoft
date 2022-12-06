@@ -42,7 +42,3 @@ def noticias(request):
     return render(request,'noticias.html', context)
 
 
-def manual(request):
-    context={
-    }
-    return render(request, 'manual.html', context)
