@@ -23,11 +23,10 @@
             aria-describedby="example1_info">
             <thead>
               <tr>
-                <th scope="col">Usuario</th>
                 <th scope="col">Grado</th>
                 <th scope="col">Nombre del Curso</th>
                 <th scope="col">Número del Curso</th>
-                <th scope="col">Grado al que Pertenece</th>
+                <th scope="col">Docentes</th>
 
                 <th scope="col">Acciones</th>
               </tr>
@@ -35,13 +34,31 @@
             <tbody>
 
               {% for curso in curso %}
-              {% if curso.Estado != '0' %}
+              {% if curso.estado != '0' %}
               <tr class="odd">
-                <td class="sorting_1 dtr-control" tabindex="0">{{curso.usuario}}</td>
-                <td>{{curso.grado}}</td>
+                <td class="sorting_1 dtr-control" tabindex="0">{{curso.grado}}</td>
                 <td>{{curso.nombreCurso}}</td>
                 <td>{{curso.numCurso}}</td>
-                <td>{{curso.GradoPerte}}</td>
+                <td>
+                  {{curso.docenteMat}}
+                  {{curso.docenteInf}}
+                  {{curso.docenteNat}}
+                  {{curso.docenteFil}}
+                  {{curso.docenteSoc}}
+                  {{curso.docenteArt}}
+                  {{curso.docenteEdFis}}
+                  {{curso.docenteEti}}
+                  {{curso.docenteEsp}}
+                  {{curso.docenteIng}}
+                  {{curso.docenteTrig}}
+                  {{curso.docenteFis}}
+                  {{curso.docenteTec}}
+                  {{curso.docenteMan}}
+                  {{curso.docenteAna}}
+                  {{curso.docenteBiot}}
+                  {{curso.docenteDisc}}
+
+                </td>
                 <td>
                   <a class="btn btn-success" href="{% url 'curso-editar' curso.id %}"><i class="fas fa-pencil-alt"></i></a>
                   <a class="btn btn-danger" href="{% url 'curso-eliminar' curso.id %}"><i class="fas fa-trash-alt"></i></a>

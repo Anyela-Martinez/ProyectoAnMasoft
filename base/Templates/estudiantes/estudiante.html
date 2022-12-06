@@ -32,14 +32,12 @@
                 <th scope="col">Dirección</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Género</th>
-                <th scope="col">Estado</th>
                 <th scope="col">Tipo de Documento del Acudiente</th>
                 <th scope="col">Número de Documento del Acudiente</th>
                 <th scope="col">Nombres del Acudiente</th>
                 <th scope="col">Apellidos del Acudiente</th>
                 <th scope="col">Teléfono del Acudiente</th>
                 <th scope="col">Correo electrónico del Acudiente</th>
-                <th scope="col">Usuario</th>
                 <th scope="col">Curso</th>
 
                 <th scope="col">Acciones</th>
@@ -48,26 +46,24 @@
             <tbody>
 
               {% for estudiante in estudiantes %}
-              {% if estudiante.Estado != '0' %}
+              {% if estudiante.estado != '0' %}
               <tr class="odd">
 
-                <td class="sorting_1 dtr-control" tabindex="0">{{estudiante.TipoDoc}}</td>
+                <td class="sorting_1 dtr-control" tabindex="0">{{estudiante.tipoDoc}}</td>
                 <td>{{estudiante.numDoc}}</td>
                 <td>{{estudiante.nombres}}</td>
                 <td>{{estudiante.apellidos}}</td>
-                <td>{{estudiante.Jornada}}</td>
+                <td>{{estudiante.jornada}}</td>
                 <td>{{estudiante.telefono}}</td>
                 <td>{{estudiante.direccion}}</td>
                 <td>{{estudiante.correo}}</td>
-                <td>{{estudiante.Genero}}</td>
-                <td>{{estudiante.Estado}}</td>
-                <td>{{estudiante.TipoDocAcu}}</td>
+                <td>{{estudiante.genero}}</td>
+                <td>{{estudiante.tipoDocAcu}}</td>
                 <td>{{estudiante.numDocAcu}}</td>
                 <td>{{estudiante.nombresAcu}}</td>
                 <td>{{estudiante.apellidosAcu}}</td>
                 <td>{{estudiante.telefonoAcu}}</td>
                 <td>{{estudiante.correoAcu}}</td>
-                <td>{{estudiante.usuario}}</td>
                 <td>{{estudiante.curso}}</td>
                 <td>
                   <a class="btn btn-success" href="{% url 'estudiantes-editar' estudiante.id %}"><i class="fas fa-pencil-alt"></i></a>

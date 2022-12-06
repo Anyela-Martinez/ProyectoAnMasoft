@@ -22,6 +22,7 @@
           <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
             <thead>
               <tr>
+                <th scope="col">Foto</th>
                 <th scope="col">Tipo de Documento</th>
                 <th scope="col">Número de Documento</th>
                 <th scope="col">Nombres</th>
@@ -38,18 +39,19 @@
             <tbody>
 
               {% for usuario in usuarios %}
-              {% if usuario.Estado != '0' %}
+              {% if usuario.estado != '0' %}
               <tr class="odd">
-                <td class="sorting_1 dtr-control" tabindex="0">{{usuario.TipoDoc}}</td>
+                <td class="sorting_1 dtr-control" tabindex="0"><img class="rounded-circle" src="{{ MEDIA_URL }}{{usuarios.foto.url}}" alt="" width="50" height="50"></td>
+                <td>{{usuario.tipoDoc}}</td>
                 <td>{{usuario.numDoc}}</td>
                 <td>{{usuario.nombres}}</td>
                 <td>{{usuario.apellidos}}</td>
-                <td>{{usuario.Jornada}}</td>
+                <td>{{usuario.jornada}}</td>
                 <td>{{usuario.telefono}}</td>
                 <td>{{usuario.direccion}}</td>
                 <td>{{usuario.correo}}</td>
-                <td>{{usuario.Genero}}</td>
-                <td>{{usuario.Rol}}</td>
+                <td>{{usuario.genero}}</td>
+                <td>{{usuario.rol}}</td>
                 <td>
                   <a class="btn btn-success" href="{% url 'usuarios-editar' usuario.id %}"><i class="fas fa-pencil-alt"></i></a>
                   <a class="btn btn-danger" href="{% url 'usuarios-eliminar' usuario.id %}"><i class="fas fa-trash-alt"></i></a>

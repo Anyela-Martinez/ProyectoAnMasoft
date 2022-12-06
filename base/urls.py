@@ -18,7 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
 from base.views import error_404, inicio, inicioAdmin, educacion, modulos, noticias 
+
+from base.views import logout_user
 from django.contrib.auth import  views as auth_views
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 handler404= error_404
@@ -28,10 +33,9 @@ urlpatterns = [
     path('reset_password_send/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name="autenticacion/password-confirm.html"), name='password_reset_confirm'),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('login/', auth_views.LoginView.as_view(template_name="login.html"), name='login'),
-    path('logout/', auth_views.logout_then_login, name='logout'),
+    path('login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
+    path('logout/', logout_user, name='logout'),
     path('', inicio, name='inicio'),
-    path('accounts/login/', inicio, name='inicio'),
     path('adm/', inicioAdmin, name='inicio-admin'),
     path('modulos/', modulos, name='modulos'),
     path('noticias/', noticias, name='noticias'),
@@ -45,4 +49,5 @@ urlpatterns = [
     path('preregistro/', include('preregistro.urls')),
     path('publicaciones/', include('publicaciones.urls')),
     path('educacion/', educacion, name='educacion'),
-]
+    
+]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

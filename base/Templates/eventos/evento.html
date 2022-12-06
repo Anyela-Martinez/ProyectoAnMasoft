@@ -25,7 +25,6 @@
                             <tr>
                                 <th scope="col">Tipo de Evento</th>
                                 <th scope="col">Nombre del evento</th>
-                                <th scope="col">Descripción del evento</th>
                                 <th scope="col">Fecha del Evento</th>
                                 <th scope="col">Hora del Evento</th>
                                 <th scope="col">Lugar del evento</th>
@@ -40,9 +39,8 @@
                             {% for evento in eventos %}
                             {% if evento.estado != '0' %}
                             <tr class="odd">
-                                <td class="sorting_1 dtr-control" tabindex="0">{{evento.TipoEvento}}</td>
+                                <td class="sorting_1 dtr-control" tabindex="0">{{evento.tipoEvento}}</td>
                                 <td>{{evento.nombreEve}}</td>
-                                <td>{{evento.descripEve}}</td>
                                 <td>{{evento.fechaEve}}</td>
                                 <td>{{evento.horaEve}}</td>
                                 <td>{{evento.lugarEve}}</td>

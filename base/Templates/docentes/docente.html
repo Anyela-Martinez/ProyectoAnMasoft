@@ -32,24 +32,26 @@
                                 <th scope="col">Dirección</th>
                                 <th scope="col">Correo Electrónico</th>
                                 <th scope="col">Jornada</th>
+                                <th scope="col">Asignatura</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             {% for docente in docentes %}
-                            {% if docente.Estado != '0' %}
+                            {% if docente.estado != '0' %}
                             <tr class="odd">
 
-                                <td class="sorting_1 dtr-control" tabindex="0">{{docente.TipoDoc}}</td>
+                                <td class="sorting_1 dtr-control" tabindex="0">{{docente.tipoDoc}}</td>
                                 <td>{{docente.numDoc}}</td>
                                 <td>{{docente.nombres}}</td>
                                 <td>{{docente.apellidos}}</td>
-                                <td>{{docente.Genero}}</td>
+                                <td>{{docente.genero}}</td>
                                 <td>{{docente.telefono}}</td>
                                 <td>{{docente.direccion}}</td>
                                 <td>{{docente.correo}}</td>
-                                <td>{{docente.Jornada}}</td>
+                                <td>{{docente.jornada}}</td>
+                                <td>{{docente.asignatura}}</td>
                                 <td>
                                     <a class="btn btn-success" href="{% url 'docentes-editar' docente.id %}"><i
                                             class="fas fa-pencil-alt"></i></a>

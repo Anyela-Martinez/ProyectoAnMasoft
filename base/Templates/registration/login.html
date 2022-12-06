@@ -10,10 +10,10 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg"><b>Bienvenido</b></p>
-                <form action="../../index3.html" method="post">
+                <form method="post">
+                    {% csrf_token %}
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control"
-                            placeholder="Correo">
+                        {{form.username}}
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -26,8 +26,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control"
-                            placeholder="Contraseña">
+                        {{form.password}}
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -50,8 +49,7 @@
                         </div>
 
                         <div class="col-4">
-                            <a href="{% url 'administradores' %}" type="submit"
-                                class="btn btn-success btn-block">Ingresar</a>
+                            <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
                         </div>
 
                     </div>
