@@ -14,4 +14,4 @@ class Asignatura(models.Model):
     estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
 
     def __str__(self)->str:
-        return "%s %s" %(self.nombreAsig) 
+        return "%s" %(self.nombreAsig) 

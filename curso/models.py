@@ -7,15 +7,13 @@ from docentes.models import Docente
 
 # Create your models here.
 class Curso(models.Model):
-        usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, verbose_name='Usuario')
+        usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Usuario')
 
         grado=models.ForeignKey(Grado, on_delete=models.CASCADE,verbose_name='Grado')
 
         nombreCurso=models.CharField(max_length=20, verbose_name="Nombre Curso") 
 
-        numCurso=models.CharField(max_length=40, verbose_name="Número Curso") 
-
-        docente=models.ForeignKey(Docente, on_delete=models.CASCADE, verbose_name='Docente')
+        docente=models.ManyToManyField(Docente, verbose_name='Docente')
 
         class Estado(models.TextChoices):
                 ACTIVO='1', _('Activo')
@@ -23,4 +21,4 @@ class Curso(models.Model):
         estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
 
         def __str__(self)->str:
-           return "%s %s" %(self.nombreCurso, self.numCurso) 
+           return "%s" %(self.nombreCurso) 

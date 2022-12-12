@@ -17,8 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
-from asignatura import views
-from base.views import error_404, inicio, inicioAdmin, educacion, manual, modulos, noticias 
+from base.views import error_404, inicio, inicioAdmin, educacion, modulos, noticias, manual, contacto
 
 from base.views import logout_user
 from django.contrib.auth import  views as auth_views
@@ -38,6 +37,8 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('', inicio, name='inicio'),
     path('adm/', inicioAdmin, name='inicio-admin'),
+    path('manual/', manual, name='manual'),
+    path('contacto/', contacto, name='contacto'),
     path('modulos/', modulos, name='modulos'),
     path('noticias/', noticias, name='noticias'),
     path('usuarios/', include('usuarios.urls')),
@@ -50,4 +51,4 @@ urlpatterns = [
     path('preregistro/', include('preregistro.urls')),
     path('publicaciones/', include('publicaciones.urls')),
     path('educacion/', educacion, name='educacion'),
-]
+]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

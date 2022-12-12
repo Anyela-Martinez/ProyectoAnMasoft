@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from grado.forms import GradoForm
 from grado.models import Grado
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views her
 

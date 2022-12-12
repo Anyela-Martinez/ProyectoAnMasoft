@@ -48,9 +48,9 @@
                                 <td>{{evento.duracionEve}}</td>
                                 <td>{{evento.invitados}}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{% url 'evento-editar' evento.id %}"><i
+                                    <a class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Editar" href="{% url 'evento-editar' evento.id %}"><i
                                             class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger" href="{% url 'evento-eliminar' evento.id %}"><i
+                                    <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar" href="{% url 'evento-eliminar' evento.id %}"><i
                                             class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

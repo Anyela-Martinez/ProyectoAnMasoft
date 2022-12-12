@@ -71,17 +71,16 @@
     <div class="col-4 align-self-center m-0">
         <div class="d-grid gap-2 m-0">
             <div class="d-grid gap-2 col mx-auto">
-                <div class="card" style="width: 18rem;">
-                    <img src="{% static 'img/usuario.png' %}"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><b>Docente Pepito Peréz</b> <br>
-                            Docente del área de matemática</p>
+                <div class="card" style="width: 12rem;">
+                    <img src="{{MEDIA_URL}}{{image_user}}" class="img-circle elevation-2 h-80" alt="User Image">
+                    <div class="info text-black">
+                        <Strong>{{usuario_actual.first_name}} {{usuario_actual.last_name}}</Strong>
                     </div>
                 </div>
+
                 <div class="d-grid gap-2 col">
                     <a href="{% url 'modulos' %}" class="btn btn-success"
-                        type="submit">Módulos</a>
+                        type="submit">Funciones</a>
                 </div>
             </div>
         </div>
@@ -191,5 +190,35 @@
             </div>
         </div>
     
+    </div>
+
+    <h2 class="subtitulo" id="Nuestros Simbolos"><b><span class="number">5</span> Nuestros Símbolos</b></h2>
+<div class="container__cards" id="Nuestros Símbolos">
+    <div class="card">
+        <div class="cover">
+            <img src="{% static 'img/Photo.jpg' %}" alt="" />
+            <div class="img__back"></div>
+        </div>
+        <div class="description">
+            <h2>Escudo</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime excepturi nesciunt sunt recusandae deserunt temporibus possimus, quaerat nisi ipsa sapiente? Molestias officiis tempora laudantium esse nihil fugiat earum vel dicta!
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cover">
+            <img src="{% static 'img/Photo.jpg' %}" alt="" />
+            <div class="img__back"></div>
+        </div>
+        <div class="description">
+            <h2>Bandera</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit beatae nam minus enim, et, veritatis possimus, consectetur tenetur eligendi id mollitia neque consequuntur atque culpa quam quia. Iusto, veritatis inventore.
+            </p>
+        </div>
+    </div>
+</div>
     {% endblock contenido %}
     

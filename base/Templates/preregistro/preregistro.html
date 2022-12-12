@@ -63,7 +63,7 @@
                                 <td>{{preregistro.correoAcu}}</td>
                                 <td>{{preregistro.colProce}}</td>
                                 <td>
-                                    <a class="btn btn-danger" href="{% url 'preregistro-eliminar' preregistro.id %}"><i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar" href="{% url 'preregistro-eliminar' preregistro.id %}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             {% endif %}

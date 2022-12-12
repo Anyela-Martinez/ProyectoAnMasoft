@@ -21,7 +21,7 @@ def preregistro_crear(request):
         form=PreregistroForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('preregistro')
+            return redirect('inicio')
         else:
             print("Error")
     else:

@@ -7,4 +7,10 @@
   {% include 'eventos/card.html' %}
   {% endfor %}
 </div>
+
+<div class="d-flex flex-wrap py-3">
+  {% for publicacion in publicacion %}
+  {% include 'publicaciones/card.html' %}
+  {% endfor %}
+</div>
 {% endblock contenido %}

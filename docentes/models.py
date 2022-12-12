@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from usuarios.models import Usuario
 from asignatura.models import Asignatura
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -19,16 +20,16 @@ class Docente(models.Model):
         apellidos=models.CharField(max_length=60, verbose_name="Apellidos")
     
         class Genero(models.TextChoices):
-                M='M', _('Masculino')
-                F='F', _('Femenino')
-                I='I', _('Indefinido')
-        genero=models.CharField(max_length=3,choices=Genero.choices, default=Genero.M, verbose_name="Género")
+                M='MASCULINO', _('Masculino')
+                F='FEMENINO', _('Femenino')
+                I='INDEFINIDO', _('Indefinido')
+        genero=models.CharField(max_length=20,choices=Genero.choices, default=Genero.M, verbose_name="Género")
     
         telefono=models.CharField(max_length=20, verbose_name="Teléfono") 
     
         direccion=models.CharField(max_length=40, verbose_name="Dirección") 
     
-        correo=models.CharField(max_length=60, verbose_name="Correo Electrónico") 
+        correo=models.EmailField(max_length=80, verbose_name="Correo Electrónico") 
     
         class Estado(models.TextChoices):
                 ACTIVO='1', _('Activo')
@@ -40,11 +41,13 @@ class Docente(models.Model):
                 JT='TARDE', _('Jornada Tarde')
         jornada=models.CharField(max_length=10,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
 
-        usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, verbose_name='Usuario')
+        usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Usuario')
 
-        asignatura=models.ForeignKey(Asignatura, on_delete=models.CASCADE, verbose_name='Asignatura')
+        asignatura=models.ForeignKey(Asignatura, blank=True, null=True, on_delete=models.CASCADE, verbose_name='Asignatura')
 
         foto=models.ImageField(upload_to='images/usuarios',blank=True, default='images/usuarios/default.png')
+
+        user=models.ForeignKey(User, on_delete= models.CASCADE)
 
         def __str__(self)->str:
            return "%s %s" %(self.nombres, self.apellidos) 

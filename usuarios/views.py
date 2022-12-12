@@ -30,8 +30,12 @@ def usuarios_crear(request):
                 user.first_name= request.POST['nombres']
                 user.last_name= request.POST['apellidos']
                 user.email= request.POST['correo']
-                user.password=make_password("@" + request.POST['nombres'][0] + request.POST['apellidos'][0] + request.POST['numDoc'][-4:])
+                user.password=make_password(request.POST['nombres'][0] + request.POST['apellidos'][0] + request.POST['numDoc'][-4:])
                 user.save()
+                user_group = User
+                my_group= Group.objects.get(name='Directivo')
+                usuario.user.groups.clear()
+                my_group.user_set.add(usuario.user)
             
             else:
                 user=User.objects.get(username=request.POST['numDoc'])

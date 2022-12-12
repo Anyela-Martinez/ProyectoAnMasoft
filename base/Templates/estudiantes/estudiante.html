@@ -66,8 +66,8 @@
                 <td>{{estudiante.correoAcu}}</td>
                 <td>{{estudiante.curso}}</td>
                 <td>
-                  <a class="btn btn-success" href="{% url 'estudiantes-editar' estudiante.id %}"><i class="fas fa-pencil-alt"></i></a>
-                  <a class="btn btn-danger" href="{% url 'estudiantes-eliminar' estudiante.id %}"><i class="fas fa-trash-alt"></i></a>
+                  <a class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Editar" href="{% url 'estudiantes-editar' estudiante.id %}"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar" href="{% url 'estudiantes-eliminar' estudiante.id %}"><i class="fas fa-trash-alt"></i></a>
                 </td>
               </tr>
               {% endif %}
