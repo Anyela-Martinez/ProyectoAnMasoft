@@ -128,9 +128,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = reverse_lazy('administradores')
-
-LOGOUT_REDIRECT_URL = reverse_lazy('inicio')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -141,7 +138,8 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = "/static"
 
-
+MEDIA_URL= '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -156,3 +154,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "cluend91@gmail.com"
 EMAIL_HOST_PASSWORD = "123456"
+
+LOGIN_URL= 'inicio'
+LOGIN_REDIRECT_URL= 'inicio-admin'

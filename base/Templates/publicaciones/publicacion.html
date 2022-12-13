@@ -27,9 +27,7 @@
                                 <th scope="col">Nombre de la publicación</th>
                                 <th scope="col">Descripcion de la publicación</th>
                                 <th scope="col">link de la publicación</th>
-                                <th scope="col">Estado</th>
                                 <th scope="col">Jornada</th>
-                                <th scope="col">Usuario</th>
                                 <th scope="col">Docente</th>
                                 <th scope="col">Grado</th>
                                 <th scope="col">Acciones</th>
@@ -38,16 +36,14 @@
                         <tbody>
 
                             {% for publicacion in publicacion %}
-                            {% if publicacion.Estado != '0' %}
+                            {% if publicacion.estado != '0' %}
                             <tr class="odd">
 
-                                <td class="sorting_1 dtr-control" tabindex="0">{{publicacion.TipoPublicacion}}</td>
+                                <td class="sorting_1 dtr-control" tabindex="0">{{publicacion.tipoPublicacion}}</td>
                                 <td>{{publicacion.nombrePubli}}</td>
                                 <td>{{publicacion.descripPublic}}</td>
                                 <td>{{publicacion.linkPubli}}</td>
-                                <td>{{publicacion.Estado}}</td>
-                                <td>{{publicacion.Jornada}}</td>
-                                <td>{{publicacion.usuario}}</td>
+                                <td>{{publicacion.jornada}}</td>
                                 <td>{{publicacion.docente}}</td>
                                 <td>{{publicacion.grado}}</td>
                                 <td>

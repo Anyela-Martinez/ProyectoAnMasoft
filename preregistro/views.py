@@ -31,24 +31,7 @@ def preregistro_crear(request):
         'form':form
 }
     return render(request,'preregistro/preregistro-crear.html',context) 
-
-def preregistro_editar(request, pk):
-    titulo="Preregistros - Editar"
-    preregistro= Preregistro.objects.get(id=pk)
-    if request.method == "POST":
-        form= PreregistroForm(request.POST, instance=preregistro)
-        if form.is_valid():
-            form.save()
-            return redirect('preregistro')
-        else:
-            print("Error al guardar")
-    else:
-        form= PreregistroForm(instance=preregistro)
-    context={
-        'titulo':titulo,
-        'form':form
-    }
-    return render(request,'preregistro/preregistro-crear.html',context) 
+ 
 
 def preregistro_eliminar(request, pk):
     titulo= "Preregistro - Eliminar"

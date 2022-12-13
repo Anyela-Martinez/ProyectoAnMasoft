@@ -1,8 +1,9 @@
 <div class="card m-3" style="width: 18rem;">
+    <img src="{{ MEDIA_URL }}{{evento.foto.url}}" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">{{evento.nombreEve}}</h5>
-        <p class="card-text">{{evento.descripEve}}</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+        <h5 class="card-title">{{evento.tipoEvento}}</h5>
+        <p class="card-text">{{evento.nombreEve}}</p>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal"
             data-bs-target="#exampleModal{{evento.id}}">
             Más información
         </button>
@@ -20,10 +21,16 @@
                     data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                El evento {{evento.nombreEve}} se llevará a cabo en
-                {{evento.lugarEve}} el día ...
+                <b>{{evento.nombreEve}}</b>
+                <br>
+                {{evento.descripEve}}
+                <br>
+                <b>FECHA: </b>{{evento.fechaEve}}
+                <br>
+                <b>Encargados: </b>{{evento.encagEve}}
+                
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success"
+                    <button type="button" class="btn btn-danger"
                         data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>

@@ -46,5 +46,5 @@ urlpatterns = [
     path('preregistro/', include('preregistro.urls')),
     path('publicaciones/', include('publicaciones.urls')),
     path('educacion/', educacion, name='educacion'),
-   
+    path('manual/', manual, name='manual'),
 ]

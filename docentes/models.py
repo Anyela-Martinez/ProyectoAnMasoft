@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from usuarios.models import Usuario
+from asignatura.models import Asignatura
 
 # Create your models here.
 
@@ -9,7 +10,7 @@ class Docente(models.Model):
                 CC='CC', _('Cédula de Ciudadanía')
                 CE='CE', _('Cédula de Extranjería')
                 PP='PP', _('Pasaporte')
-        TipoDoc=models.CharField(max_length=3,choices=TipoDoc.choices, default=TipoDoc.CC, verbose_name="Tipo de Documento") 
+        tipoDoc=models.CharField(max_length=3,choices=TipoDoc.choices, default=TipoDoc.CC, verbose_name="Tipo de Documento") 
 
         numDoc=models.CharField(max_length=60, verbose_name="Número de Documento")
 
@@ -21,7 +22,7 @@ class Docente(models.Model):
                 M='M', _('Masculino')
                 F='F', _('Femenino')
                 I='I', _('Indefinido')
-        Genero=models.CharField(max_length=3,choices=Genero.choices, default=Genero.M, verbose_name="Género")
+        genero=models.CharField(max_length=3,choices=Genero.choices, default=Genero.M, verbose_name="Género")
     
         telefono=models.CharField(max_length=20, verbose_name="Teléfono") 
     
@@ -32,14 +33,18 @@ class Docente(models.Model):
         class Estado(models.TextChoices):
                 ACTIVO='1', _('Activo')
                 INACTIVO='0', _('Inactivo')
-        Estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
+        estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     
         class Jornada(models.TextChoices):
                 JM='MAÑANA', _('Jornada Mañana')
                 JT='TARDE', _('Jornada Tarde')
-        Jornada=models.CharField(max_length=10,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
+        jornada=models.CharField(max_length=10,choices=Jornada.choices, default=Jornada.JM, verbose_name="Jornada")
 
-        usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE,verbose_name='Usuario')
+        usuario=models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, verbose_name='Usuario')
+
+        asignatura=models.ForeignKey(Asignatura, on_delete=models.CASCADE, verbose_name='Asignatura')
+
+        foto=models.ImageField(upload_to='images/usuarios',blank=True, default='images/usuarios/default.png')
 
         def __str__(self)->str:
            return "%s %s" %(self.nombres, self.apellidos) 
