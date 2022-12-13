@@ -47,12 +47,8 @@
                                 <td>{{publicacion.docente}}</td>
                                 <td>{{publicacion.grado}}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{% url
-                                        'publicaciones-editar' publicacion.id
-                                        %}"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger" href="{% url
-                                        'publicaciones-eliminar' publicacion.id
-                                        %}"><i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Editar" href="{% url 'publicaciones-editar' publicacion.id %}"><i class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar" href="{% url 'publicaciones-eliminar' publicacion.id %}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             {% endif %}

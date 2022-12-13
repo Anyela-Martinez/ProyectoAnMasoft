@@ -15,7 +15,7 @@ def inicioAdmin(request):
     context={
         'titulo':titulo
     }
-    return render(request,'index-admin.html', context)
+    return render(request,'usuarios/administradores.html', context)
 
 def error_404(request,exception):
     return page_not_found(request,'404.html')
@@ -31,6 +31,18 @@ def educacion(request):
     
     return render(request,'educacion.html', context)
 
+def manual(request):
+    context={    
+    }
+    
+    return render(request,'manual.html', context)
+
+def contacto(request):
+    context={    
+    }
+    
+    return render(request,'contacto.html', context)
+
 def noticias(request):
     titulo = 'Eventos'
     eventos= Evento.objects.filter(estado='1')
@@ -42,7 +54,14 @@ def noticias(request):
     return render(request,'noticias.html', context)
 
 
+<<<<<<< HEAD
 def manual(request):
     context={
     }
     return render(request, 'manual.html', context)
+=======
+
+def logout_user(request):
+    logout(request)
+    return redirect('inicio')
+>>>>>>> 514f61722d84e3d275dab841872a746118a358fa

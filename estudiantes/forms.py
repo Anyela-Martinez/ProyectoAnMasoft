@@ -4,4 +4,4 @@ from estudiantes.models import Estudiante
 class EstudianteForm(ModelForm):
     class Meta:
         model=Estudiante
-        exclude=['Estado']
+        exclude=['estado', 'user', 'usuario']

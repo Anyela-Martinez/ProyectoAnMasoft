@@ -79,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'base.context_processors.sesion'
             ],
         },
     },
@@ -156,4 +157,4 @@ EMAIL_HOST_USER = "cluend91@gmail.com"
 EMAIL_HOST_PASSWORD = "123456"
 
 LOGIN_URL= 'inicio'
-LOGIN_REDIRECT_URL= 'inicio-admin'
+LOGIN_REDIRECT_URL= 'administradores'

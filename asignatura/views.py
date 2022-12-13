@@ -21,7 +21,7 @@ def asignaturas_crear(request):
         form=AsignaturaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('asignaturas')
+            return redirect('asignatura')
         else:
             print("Error")
     else:

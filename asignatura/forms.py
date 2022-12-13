@@ -4,4 +4,4 @@ from asignatura.models import Asignatura
 class AsignaturaForm(ModelForm):
     class Meta:
         model= Asignatura 
-        exclude=['Estado']
+        exclude=['estado', 'usuario']

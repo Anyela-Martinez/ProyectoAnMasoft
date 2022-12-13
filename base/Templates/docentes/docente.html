@@ -53,9 +53,9 @@
                                 <td>{{docente.jornada}}</td>
                                 <td>{{docente.asignatura}}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{% url 'docentes-editar' docente.id %}"><i
+                                    <a class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Editar" href="{% url 'docentes-editar' docente.id %}"><i
                                             class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger" href="{% url 'docentes-eliminar' docente.id %}"><i
+                                    <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar" href="{% url 'docentes-eliminar' docente.id %}"><i
                                             class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

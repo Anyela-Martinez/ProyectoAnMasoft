@@ -1,9 +1,11 @@
 from django.shortcuts import redirect, render
 from publicaciones.forms import PublicacionForm
+from django.contrib.auth.decorators import login_required, permission_required
 from publicaciones.models import Publicacion
 
 # Create your views her
 
+@login_required(login_url='login')
 def publicacion(request):
     titulo="Publicacion"
     publicacion= Publicacion.objects.all()
