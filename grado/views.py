@@ -4,7 +4,7 @@ from grado.models import Grado
 from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views her
-
+@login_required(login_url='login')
 def grado(request):
     titulo="Grado"
     grado= Grado.objects.all()

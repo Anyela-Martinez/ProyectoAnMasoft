@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.hashers import make_password
 
 # Create your views her
-
+@login_required(login_url='login')
 def estudiantes(request):
     titulo="Estudiantes"
     estudiantes= Estudiante.objects.all()

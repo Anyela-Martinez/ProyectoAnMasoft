@@ -12,6 +12,7 @@
 
 
 
+
 <!-- DataTables  & Plugins -->
 <script src="{% static 'datatables/jquery.dataTables.min.js' %}"></script>
 <script src="{% static 'datatables/datatables.spanish.json' %}"></script>
@@ -31,17 +32,45 @@
 <script>
   $(function () {
       $("#tabla-general").DataTable({
-        language:{
-          url: "{% static 'datatables/datatables.spanish.json' %}"
-        },
-          "responsive": true, "lengthChange": false, "autoWidth": true,"ordering": true,
-          "searching": true, "info": true,
-          "buttons": ["copy", "csv", "excel", "pdf", "print"]
+        language:{url: "{% static 'datatables/datatables.spanish.json' %}"},
+        "responsive": true, "lengthChange": false, "autoWidth": true,"ordering": true,
+        "searching": true, "info": true,
+        "buttons": ["copy", "csv", "excel", "pdf", "print"]
       }).buttons().container().appendTo('#tabla-general_wrapper .col-md-6:eq(0)');
    
   });
 </script>
 <script src="{% static 'js/modal-status.js' %}"></script>
+
+
+<script type="text/javascript"> 
+  function cambiarModo() { 
+    var cuerpoweb = document.body; 
+    cuerpoweb.classList.toggle("oscuro"); 
+  } 
+</script>
+
+<script type="text/javascript"> 
+  function cambiarModo2() { 
+    var cuerpoweb = document.body; 
+    cuerpoweb.classList.toggle("gris"); 
+  } 
+</script>
+
+<script>
+  function alertaExito()
+  {
+  alert('Se realizó Exitosamente');
+  }
+</script>
+
+<script>
+  function alertaError()
+  {
+  alert('No se pudo realizar');
+  }
+</script>
+
 {% block javascript %}
 
 {% endblock javascript %}

@@ -34,7 +34,6 @@ def usuarios_crear(request):
                 user.save()
                 user_group = User
                 my_group= Group.objects.get(name='Directivo')
-                usuario.user.groups.clear()
                 my_group.user_set.add(usuario.user)
             
             else:
@@ -54,7 +53,7 @@ def usuarios_crear(request):
                 user=user,
                 rol=request.POST['rol'],
             )
-            return redirect('usuarios')
+            return redirect('usuarios')   
         else:
             form = UsuarioForm(request.POST,request.FILES)
     else:

@@ -59,4 +59,4 @@ def noticias(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('inicio')
+    return redirect('inicio.html')

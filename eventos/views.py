@@ -2,8 +2,10 @@ from django.shortcuts import redirect, render
 from eventos.forms import EventoForm
 
 from eventos.models import Evento
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views her
+@login_required(login_url='login')
 def evento(request):
     titulo="Evento"
     eventos= Evento.objects.all()
@@ -56,7 +58,7 @@ def evento_eliminar(request, pk):
     titulo= "Evento - Eliminar"
     evento= Evento.objects.all()
     Evento.objects.filter(id=pk).update(
-            Estado='0'
+            estado='0'
         )
     return redirect('evento')
     

@@ -8,3 +8,4 @@ class EventoForm(ModelForm):
         widgets={
             'fechaEve': widgets.DateInput(attrs={'type':'date'})
               }
+    

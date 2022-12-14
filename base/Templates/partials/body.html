@@ -49,7 +49,43 @@
                             <li><a class="dropdown-item" href="{% url 'manual' %}">Manual</a></li>
                             <li><a class="dropdown-item" href="{% url 'contacto' %}">Contacto</a></li>
                         </ul>
-                      </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <button class="btn  btn-flotante-2" type="button" data-bs-toggle="dropdown" data-toggle="tooltip" data-placement="top" title="Accesibilidad" aria-expanded="false">
+                            <box-icon name='universal-access'></box-icon>
+                        </button>
+                        
+                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                        <!-- Disminuir tamaño de letra -->
+                        <div class="d-flex align-items-center ms-2 me-0">
+                            <button type="button" class="disminuir dropdown-item "><i class="bi bi-zoom-out me-3 fs-5"></i>
+                                Zoom -
+                            </button>
+                        </div>
+
+                        <!-- Aumentar tamaño de letra -->
+                        <div class="d-flex align-items-center ms-2 me-0">
+                            <button type="button" class="aumentar dropdown-item "><i class="bi bi-zoom-in me-3 fs-5"></i>
+                                Zoom +
+                            </button>
+                        </div>
+
+                        <!-- Contraste oscuro -->
+                        <div class="d-flex align-items-center ms-2 me-0">
+                            <button type="button" class="dropdown-item " onclick="cambiarModo()"><i class="bi bi-brightness-high-fill me-3 fs-5"></i>
+                                Oscuro/Claro
+                            </button>
+                        </div>
+
+                        <!-- Contraste Gris -->
+                        <div class="d-flex align-items-center ms-2 me-0">
+                            <button type="button" class="dropdown-item" onclick="cambiarModo2()"><i class="bi bi-brightness-high-fill me-3 fs-5"></i>
+                                Gris/Claro
+                            </button>
+                        </div>
+                        </ul>
+                    </div>
                     
                     {% block contenido %}
                     
@@ -59,7 +95,9 @@
         </div>
         {% include 'partials/footer.html' %}
         {% include 'partials/js.html' %}
+        {% include 'partials/acces.html' %}
         {% block javascript %}
         {% endblock javascript %}
+        
     </body>
 </html>

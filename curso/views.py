@@ -1,9 +1,10 @@
 from django.shortcuts import redirect, render
 from curso.forms import CursoForm
 from curso.models import Curso
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views her
-
+@login_required(login_url='login')
 def curso(request):
     curso= Curso.objects.all()
     titulo="Curso"

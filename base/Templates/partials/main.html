@@ -1,37 +1,51 @@
-{% load static %}
+<!-- Inicio configuración botón para personas con discapacidad  -->
+<a href="#" class=" link-dark text-decoration-none"
+id="dropdownUser2"
+data-bs-toggle="dropdown" aria-expanded="false">
+<img src="{% static 'img/disabled_1.png' %}" alt="imagen-ayuda" width="35"
+    height="35" data-toggle="tooltip" title="Accesibilidad">
+</a>
 
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Título de la tarjeta</h5>
-      <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Un elemento</li>
-      <li class="list-group-item">Un segundo elemento</li>
-      <li class="list-group-item">Un tercer elemento</li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Enlace de tarjeta</a>
-      <a href="#" class="card-link">Otro enlace</a>
-    </div>
-  </div>
+<ul class="dropdown-menu text-small shadow"
+aria-labelledby="dropdownUser2">
+<!-- Disminuir tamaño de letra -->
+<div class="d-flex align-items-center ms-2 me-0">
+    <button type="button" class="disminuir dropdown-item "><i class="bi bi-zoom-out me-3 fs-5"></i>Disminuir
+        Tamaño de
+        Letra</button>
+</div>
 
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Título de la tarjeta</h5>
-      <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Un elemento</li>
-      <li class="list-group-item">Un segundo elemento<//li>
-      <li class="list-group-item">Un tercer elemento<//li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Enlace de tarjeta</a>
-      <a href="#" class="card-link">Otro enlace</a>
-    </div>
-  </div>
+<!-- Aumentar tamaño de letra -->
+<div class="d-flex align-items-center ms-2 me-0">
+    <button type="button" class="aumentar dropdown-item "><i class="bi bi-zoom-in me-3 fs-5"></i>Aumentar 
+        Tamaño de 
+        Letra</button>
+</div>
 
-  
+<!-- Contraste oscuro -->
+<div class="d-flex align-items-center ms-2 me-0">
+    <button type="button" class="dropdown-item contraste_oscuro"><i class="bi bi-brightness-high-fill me-3 fs-5"></i>Contraste
+        Oscuro</button>
+</div>
+
+<!-- Contraste Gris -->
+<div class="d-flex align-items-center ms-2 me-0">
+    <button type="button" class="dropdown-item contraste_gris"><i class="bi bi-brightness-high-fill me-3 fs-5"></i>Contraste
+        Gris</button>
+</div>
+
+<!-- Contraste brillante -->
+<div class="d-flex align-items-center ms-2 me-0">
+    <button type="button" class="dropdown-item contraste_brillante"><i class="bbi bi-brightness-high me-3 fs-5"></i>Contraste
+        Brillante</button>
+</div>
+
+<!-- Restablecer Letra y Contraste-->
+<div class="d-flex align-items-center ms-2 me-0">
+    <button type="button" class="restablecer dropdown-item"><i class="bi bi-arrow-repeat me-3 fs-5"></i>Restablecer</button>
+</div>
+<li><hr class="dropdown-divider"></li>
+</ul>
+</div>
+<!-- FIN BOTONES DE AYUDA-->
+

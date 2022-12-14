@@ -2,9 +2,10 @@ from django.shortcuts import redirect, render
 from asignatura.forms import AsignaturaForm
 
 from asignatura.models import Asignatura
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views her
-
+@login_required(login_url='login')
 def asignatura(request):
     asignatura= Asignatura.objects.all()
     titulo="Asignaturas"
