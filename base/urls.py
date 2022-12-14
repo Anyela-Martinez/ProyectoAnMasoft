@@ -17,13 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
+<<<<<<< HEAD
+from asignatura import views
+from base.views import error_404, inicio, inicioAdmin, educacion, manual, modulos, noticias 
+=======
 from base.views import error_404, inicio, inicioAdmin, educacion, modulos, noticias, manual, contacto
 
 from base.views import logout_user
+>>>>>>> 514f61722d84e3d275dab841872a746118a358fa
 from django.contrib.auth import  views as auth_views
-
-from django.conf import settings
-from django.conf.urls.static import static
 
 
 handler404= error_404
@@ -37,6 +39,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name="registration/login.html"), name='login'),
     path('logout/', logout_user, name='logout'),
     path('', inicio, name='inicio'),
+    path('accounts/login/', inicio, name='inicio'),
     path('adm/', inicioAdmin, name='inicio-admin'),
     path('manual/', manual, name='manual'),
     path('contacto/', contacto, name='contacto'),
@@ -52,4 +55,9 @@ urlpatterns = [
     path('preregistro/', include('preregistro.urls')),
     path('publicaciones/', include('publicaciones.urls')),
     path('educacion/', educacion, name='educacion'),
+<<<<<<< HEAD
+    path('manual/', manual, name='manual'),
+]
+=======
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+>>>>>>> 514f61722d84e3d275dab841872a746118a358fa

@@ -1,10 +1,8 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views.defaults import page_not_found
 from django.views.generic import ListView
 from eventos.models import Evento
-from django.contrib import messages
-from django.contrib.auth import logout
-
 from usuarios.models import Usuario 
 
 def inicio(request):
@@ -56,6 +54,12 @@ def noticias(request):
     return render(request,'noticias.html', context)
 
 
+<<<<<<< HEAD
+def manual(request):
+    context={
+    }
+    return render(request, 'manual.html', context)
+=======
 
 def logout_user(request):
     logout(request)
